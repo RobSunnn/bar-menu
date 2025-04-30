@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bar Menu</title>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #1c1c1c; color: #fff; }
+    header { background-color: #e91e63; padding: 1rem; text-align: center; font-size: 1.5rem; font-weight: bold; }
+    nav { text-align: center; margin: 1rem 0; }
+    nav a { color: #e91e63; text-decoration: none; font-size: 1rem; }
+    li a {text-decoration: none; color: white; }
+    .menu-section { padding: 1rem; max-width: 800px; margin: auto; }
+    .category h2 { border-bottom: 2px solid #e91e63; padding-bottom: 0.5rem; margin-bottom: 1rem; color: #e91e63; }
+    .item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #333; }
+    .item:last-child { border-bottom: none; }
+    .item-name { font-weight: 500; }
+    .price { font-weight: bold; }
+    @media (max-width: 600px) {
+      .item { flex-direction: column; align-items: flex-start; }
+      .price { margin-top: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+<header style="font-size: 35px">🍹 Bar Menu</header>
+  <ul style="list-style: none; padding: 0; text-align: center; margin-top: 2rem; font-size: 30px;">
+    <li><a href="alcohol.html">🍸 Alcohol</a></li>
+    <li><a href="beer.html">🍺 Beer</a></li>
+    <li><a href="beverages.html">🥤 Beverages</a></li>
+    <li><a href="snacks.html">🍟 Snacks</a></li>
+    <li><a href="desserts.html">🍰 Desserts</a></li>
+  </ul>
+</body>
+</html>

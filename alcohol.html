@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alcohol - Bar Menu</title>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #1c1c1c; color: #fff; }
+    header { background-color: #e91e63; padding: 1rem; text-align: center; font-size: 1.5rem; font-weight: bold; }
+    nav { text-align: center; margin: 1rem 0; }
+    nav a { color: #e91e63; text-decoration: none; font-size: 1rem; }
+    .menu-section { padding: 1rem; max-width: 800px; margin: auto; }
+    .category h2 { border-bottom: 2px solid #e91e63; padding-bottom: 0.5rem; margin-bottom: 1rem; color: #e91e63; }
+    .item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #333; }
+    .item:last-child { border-bottom: none; }
+    .item-name { font-weight: 500; }
+    .price { font-weight: bold; }
+    @media (max-width: 600px) {
+      .item { flex-direction: column; align-items: flex-start; }
+      .price { margin-top: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+<header>🍸 Alcohol</header>
+<nav><a href="index.html">← Back to Menu</a></nav>
+<div class="menu-section">
+  <div class="category">
+    <h2>Whiskey</h2>
+    <div class="item"><span class="item-name">Jameson Irish Whiskey</span><span class="price">$8.00</span></div>
+    <div class="item"><span class="item-name">Jack Daniel's</span><span class="price">$9.00</span></div>
+    <div class="item"><span class="item-name">Chivas Regal 12</span><span class="price">$10.00</span></div>
+    <div class="item"><span class="item-name">Glenfiddich 15</span><span class="price">$12.00</span></div>
+    <div class="item"><span class="item-name">Johnnie Walker Black</span><span class="price">$11.00</span></div>
+    <div class="item"><span class="item-name">Maker's Mark</span><span class="price">$9.50</span></div>
+    <div class="item"><span class="item-name">Bushmills Original</span><span class="price">$7.50</span></div>
+  </div>
+  <div class="category">
+    <h2>Vodka</h2>
+    <div class="item"><span class="item-name">Absolut Vodka</span><span class="price">$6.00</span></div>
+    <div class="item"><span class="item-name">Grey Goose</span><span class="price">$8.50</span></div>
+    <div class="item"><span class="item-name">Belvedere</span><span class="price">$9.00</span></div>
+  </div>
+  <div class="category">
+    <h2>Other Drinks</h2>
+    <div class="item"><span class="item-name">Bacardi Rum</span><span class="price">$7.00</span></div>
+    <div class="item"><span class="item-name">Campari</span><span class="price">$7.50</span></div>
+    <div class="item"><span class="item-name">Jägermeister</span><span class="price">$6.50</span></div>
+  </div>
+</div>
+</body>
+</html>
