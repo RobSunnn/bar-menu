@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Bar Menu</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Bright background color */
+            color: black; /* Black text */
+        }
+
+        /* Welcome Screen */
+        .welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            background-color: rgba(60,75,118,0.69);
+            color: white;
+            font-size: 3rem;
+            animation: fadeOut 1s ease-in-out 3s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .wrapper {
+            display: flex; /* Use flexbox to center the container */
+            justify-content: center; /* Horizontally center the book-container */
+            align-items: center; /* Vertically center the book-container */
+            height: 100vh; /* Take up the full height of the viewport */
+        }
+
+        /* Flip Book Container */
+        .book-container {
+            display: none; /* Initially hidden */
+            width: 60vw; /* Reduced size */
+            height: 60vh; /* Reduced size */
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            background-color: white; /* Bright background for the book */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        /* Book */
+        .book {
+            width: 100%;
+            height: 100%;
+            perspective: 2000px;
+            position: relative;
+        }
+
+        /* Pages */
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            color: black;
+            border: 2px solid #ddd;
+            backface-visibility: hidden;
+            transform-origin: left;
+            transition: transform 0.8s;
+            z-index: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+            align-items: center;
+        }
+
+        .page.turn {
+            transform: rotateY(-180deg); /* Flip the page */
+        }
+
+        .page.visible {
+            z-index: 1; /* Bring the current page to the front */
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .nav-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .nav-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .card-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 31px;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            color: #28a745; /* Green for price */
+            font-weight: bold;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            /* For medium-sized screens (tablets and below) */
+            .welcome-screen h1 {
+                font-size: 2.5rem;
+            }
+
+            .welcome-screen h2 {
+                font-size: 1.5rem;
+            }
+
+            .book-container {
+                width: 70vw; /* Increase size slightly */
+                height: 70vh; /* Increase size slightly */
+            }
+
+            .page h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* For smaller screens (phones in portrait mode) */
+            .welcome-screen h1 {
+                font-size: 2rem;
+            }
+
+            .welcome-screen h2 {
+                font-size: 1.2rem;
+            }
+
+            .book-container {
+                width: 80vw; /* Further increase size */
+                height: 80vh; /* Further increase size */
+            }
+
+            .page h2 {
+                font-size: 1.5rem;
+            }
+
+            .nav-buttons button {
+                padding: 8px 15px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* For very small screens (phones in landscape mode) */
+            .welcome-screen h1 {
+                font-size: 1.5rem;
+            }
+
+            .welcome-screen h2 {
+                font-size: 1rem;
+            }
+
+            .book-container {
+                width: 90vw; /* Even larger size */
+                height: 90vh; /* Even larger size */
+                padding: 5px;
+            }
+
+            .page h2 {
+                font-size: 1.2rem;
+            }
+
+            .nav-buttons button {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Welcome Screen -->
+<div class="welcome-screen">
+    <h1>Welcome to OK Sports Bar <br> Digital Menu<br></h1>
+</div>
+
+<div class="wrapper">
+    <!-- Flip Book Menu -->
+    <div class="book-container">
+        <div class="nav-buttons">
+            <button id="prevBtn">❮</button>
+            <button id="nextBtn">❯</button>
+        </div>
+
+        <div class="book">
+
+            <!-- Coffee Page -->
+            <div class="page coffee-page visible">
+                <h2>Coffee Menu</h2>
+                <br>
+                <div class="beverages-card">
+                    <div class="card-content">
+                        <div class="beverage-item">
+                            <h4>Espresso</h4>
+                            <p>Strong and bold, served in a small cup.</p>
+                            <p class="price">$3.00</p>
+                        </div>
+                        <div class="beverage-item">
+                            <h4>Cappuccino</h4>
+                            <p>Creamy espresso with steamed milk.</p>
+                            <p class="price">$4.50</p>
+                        </div>
+                        <div class="beverage-item">
+                            <h4>Coffee with milk</h4>
+                            <p>Creamy espresso with steamed milk.</p>
+                            <p class="price">$4.50</p>
+                        </div>
+                        <div class="beverage-item">
+                            <h4>Nespresso</h4>
+                            <p>Creamy espresso with steamed milk.</p>
+                            <p class="price">$4.50</p>
+                        </div>
+<!--                        <div class="beverage-item">-->
+<!--                            <h4>3in1</h4>-->
+<!--                            <p>Creamy espresso with steamed milk.</p>-->
+<!--                            <p class="price">$4.50</p>-->
+<!--                        </div>-->
+<!--                        <div class="beverage-item">-->
+<!--                            <h4>Milk with Nescafe</h4>-->
+<!--                            <p>Creamy espresso with steamed milk.</p>-->
+<!--                            <p class="price">$4.50</p>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages Page -->
+            <div class="page">
+                <h2>Beverages Menu</h2>
+                <br>
+<!--                <h3>Popular Drinks</h3>-->
+                <div class="beverages-card">
+                    <div class="card-content">
+                        <div class="beverage-item">
+                            <h4>Coca Cola</h4>
+                            <p>Start your day with a freshly brewed cup of coffee. Our menu includes:</p>
+<!--                            <ul>-->
+<!--                                <li>Espresso - $3.00</li>-->
+<!--                                <li>Latte - $4.50</li>-->
+<!--                                <li>Cappuccino - $4.00</li>-->
+<!--                                <li>Americano - $3.50</li>-->
+<!--                            </ul>-->
+                        </div>
+                        <div class="beverage-item">
+                            <h4>Fanta</h4>
+                            <p>Relax with a cup of premium tea. Available varieties:</p>
+                            <ul>
+                                <li>Orange - $2.00</li>
+                                <li>Lemon - $2.50</li>
+<!--                                <li>Herbal Tea - $2.75</li>-->
+<!--                                <li>Chai Latte - $3.50</li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beer Page -->
+            <div class="page">
+                <h2>Beer Menu</h2>
+                <br>
+                <h3>Our Beer Selection</h3>
+                <div class="beverages-card">
+                    <div class="card-content">
+                        <div class="beverage-item">
+                            <h4>Light Beer</h4>
+                            <p>Refreshing and easy-going with a light taste.</p>
+                            <p class="price">$5.00</p> <!-- Price added here -->
+                        </div>
+                        <div class="beverage-item">
+                            <h4>IPA</h4>
+                            <p>Bitter, hoppy, and full-bodied beer for true beer lovers.</p>
+                            <p class="price">$6.00</p> <!-- Price added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alcohol Page -->
+            <div class="page">
+                <h2>Alcoholic Drinks Menu</h2>
+                <br>
+                <h3>Premium Spirits</h3>
+                <div class="beverages-card">
+                    <div class="card-content">
+                        <div class="beverage-item">
+                            <h4>Whiskey</h4>
+                            <p>Strong, smooth, and perfect for sipping.</p>
+                            <p class="price">$8.00</p> <!-- Price added here -->
+                        </div>
+                        <div class="beverage-item">
+                            <h4>Vodka</h4>
+                            <p>Clean and versatile for cocktails.</p>
+                            <p class="price">$7.00</p> <!-- Price added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fast Food Page -->
+            <div class="page">
+                <h2>Fast Food Menu</h2>
+                <br>
+                <h3>Delicious Snacks</h3>
+                <div class="beverages-card">
+                    <div class="card-content">
+                        <div class="beverage-item">
+                            <h4>Burgers</h4>
+                            <p>Juicy, delicious burgers with various toppings.</p>
+                            <p class="price">$6.50</p> <!-- Price added here -->
+                        </div>
+                        <div class="beverage-item">
+                            <h4>Fries</h4>
+                            <p>Crispy fries, perfect for any meal.</p>
+                            <p class="price">$2.50</p> <!-- Price added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // Hide the welcome screen and show the book after 3 seconds
+    setTimeout(() => {
+        document.querySelector('.welcome-screen').style.display = 'none';
+        document.querySelector('.book-container').style.display = 'flex';
+    }, 1500);
+
+    // Flip book logic
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+
+    const updateBook = () => {
+        pages.forEach((page, index) => {
+            if (index === currentPage) {
+                page.classList.add('visible'); // Ensure the page is visible
+                page.classList.remove('turn');  // Remove turn class for the current page
+            } else {
+                page.classList.remove('visible'); // Hide the page
+                page.classList.add('turn');       // Add turn class for non-current pages
+            }
+        });
+    };
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        currentPage = (currentPage + 1) % pages.length; // Loop back to first page after last
+        updateBook();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        currentPage = (currentPage - 1 + pages.length) % pages.length; // Loop back to last page before first
+        updateBook();
+    });
+
+    // Initialize book state
+    updateBook();
+</script>
+
+</body>
+</html>
