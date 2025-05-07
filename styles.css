@@ -1,5 +1,21 @@
 /* styles.css */
 
+/* Animate background and text colors on theme switch */
+html, body, header, footer, .back-btn, .toggle-btn, input, .item, nav .menu li a {
+    transition:
+            background-color 0.4s ease,
+            color 0.4s ease,
+            border-color 0.4s ease;
+}
+
+/* Bonus: rotate the theme icon when switching */
+#themeToggle {
+    transition: transform 0.5s ease;
+}
+:root.light #themeToggle {
+    transform: rotate(180deg);
+}
+
 /* Theme vars */
 :root {
     --bg: #121212;
