@@ -2,34 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bar Menu</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #1c1c1c; color: #fff; }
-    header { background-color: #e91e63; padding: 1rem; text-align: center; font-size: 1.5rem; font-weight: bold; }
-    nav { text-align: center; margin: 1rem 0; }
-    nav a { color: #e91e63; text-decoration: none; font-size: 1rem; }
-    li a {text-decoration: none; color: white; }
-    .menu-section { padding: 1rem; max-width: 800px; margin: auto; }
-    .category h2 { border-bottom: 2px solid #e91e63; padding-bottom: 0.5rem; margin-bottom: 1rem; color: #e91e63; }
-    .item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #333; }
-    .item:last-child { border-bottom: none; }
-    .item-name { font-weight: 500; }
-    .price { font-weight: bold; }
-    @media (max-width: 600px) {
-      .item { flex-direction: column; align-items: flex-start; }
-      .price { margin-top: 0.3rem; }
+    :root {
+      --bg: #121212;
+      --fg: #f0f0f0;
+      --accent: #e91e63;
+      --accent-dark: #b0003a;
+      --radius: 0.5rem;
+      --gap: 1rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--accent);
+      padding: 1rem var(--gap);
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+
+    main {
+      flex: 1;
+      padding: var(--gap);
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    nav .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--gap);
+      list-style: none;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    nav .menu li a {
+      display: block;
+      background: rgba(255,255,255,0.05);
+      color: var(--fg);
+      text-decoration: none;
+      padding: 1rem;
+      border-radius: var(--radius);
+      font-weight: 500;
+      text-align: center;
+      transition: background 0.3s, transform 0.2s;
+    }
+    nav .menu li a .icon {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+    nav .menu li a:hover,
+    nav .menu li a:focus {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      opacity: 0.6;
     }
   </style>
 </head>
+
 <body>
-<header style="font-size: 35px">🍹 Bar Menu</header>
-  <ul style="list-style: none; padding: 0; text-align: center; margin-top: 2rem; font-size: 30px;">
-    <li><a href="alcohol.html">🍸 Alcohol</a></li>
-    <li><a href="beer.html">🍺 Beer</a></li>
-    <li><a href="beverages.html">🥤 Beverages</a></li>
-    <li><a href="snacks.html">🍟 Snacks</a></li>
-    <li><a href="desserts.html">🍰 Desserts</a></li>
-  </ul>
+<header>
+  <h1>🍹 Bar Menu</h1>
+</header>
+
+<main>
+  <p class="intro">Scan the QR on your table, then tap a category below to explore our offerings.</p>
+
+  <nav>
+    <ul class="menu">
+      <li>
+        <a href="alcohol.html">
+          <span class="icon">🍸</span>
+          Alcohol
+        </a>
+      </li>
+      <li>
+        <a href="beer.html">
+          <span class="icon">🍺</span>
+          Beer
+        </a>
+      </li>
+      <li>
+        <a href="beverages.html">
+          <span class="icon">🥤</span>
+          Beverages
+        </a>
+      </li>
+      <li>
+        <a href="snacks.html">
+          <span class="icon">🍟</span>
+          Snacks
+        </a>
+      </li>
+      <li>
+        <a href="desserts.html">
+          <span class="icon">🍰</span>
+          Desserts
+        </a>
+      </li>
+    </ul>
+  </nav>
+</main>
+
+<footer>
+  &copy; 2025 Your Bar Name. Enjoy responsibly!
+</footer>
 </body>
 </html>

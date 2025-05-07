@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Coffee – Bar Menu</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #121212;
+            --fg: #f0f0f0;
+            --accent: #e91e63;
+            --accent-dark: #b0003a;
+            --radius: 0.5rem;
+            --gap: 1rem;
+            --border: rgba(255,255,255,0.1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.4;
+        }
+
+        header {
+            background: var(--accent);
+            padding: var(--gap);
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--gap) auto 0;
+            max-width: 800px;
+            text-decoration: none;
+            background: rgba(255,255,255,0.05);
+            color: var(--fg);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            font-weight: 500;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .back-btn:hover,
+        .back-btn:focus {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+        .back-btn .arrow {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        main {
+            flex: 1;
+            padding: var(--gap);
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .category {
+            margin-bottom: 2rem;
+        }
+        .category h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.25rem;
+            margin-bottom: var(--gap);
+        }
+
+        .item-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--gap);
+        }
+        .item {
+            background: rgba(255,255,255,0.05);
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .item-name {
+            font-weight: 500;
+        }
+        .price {
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: var(--gap);
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>☕ Coffee</h1>
+</header>
+
+<a href="index.html" class="back-btn">
+    <span class="arrow">←</span> Back to Menu
+</a>
+
+<main>
+    <section class="category">
+        <h2>Espresso</h2>
+        <div class="item-list">
+            <div class="item">
+                <span class="item-name">Single Espresso</span>
+                <span class="price">$3.00</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Double Espresso</span>
+                <span class="price">$4.00</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Milk-Based</h2>
+        <div class="item-list">
+            <div class="item">
+                <span class="item-name">Cappuccino</span>
+                <span class="price">$4.50</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Latte</span>
+                <span class="price">$5.00</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Flat White</span>
+                <span class="price">$5.00</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Cold Coffee</h2>
+        <div class="item-list">
+            <div class="item">
+                <span class="item-name">Iced Latte</span>
+                <span class="price">$5.50</span>
+            </div>
+            <div class="item">
+                <span class="item-name">Cold Brew</span>
+                <span class="price">$6.00</span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Your Bar Name. Enjoy responsibly!
+</footer>
+</body>
+</html>
