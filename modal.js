@@ -38,6 +38,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // wire item clicks
     items.forEach((item, i) => item.addEventListener('click', () => showItem(i)));
 
+    let touchStartX = null;
+
+    // Record where the touch began
+    modal.addEventListener('touchstart', e => {
+        // Only consider single‐finger touches
+        if (e.touches.length === 1) {
+            touchStartX = e.touches[0].clientX;
+        }
+    });
+
+    // When the finger lifts, compare positions
+    modal.addEventListener('touchend', e => {
+        if (touchStartX === null) return;
+
+        const touchEndX = e.changedTouches[0].clientX;
+        const deltaX    = touchEndX - touchStartX;
+        const threshold = 50; // px – minimum swipe distance
+
+        if (Math.abs(deltaX) > threshold) {
+            if (deltaX > 0) {
+                // swiped right → go to previous
+                showItem(currentIndex - 1);
+            } else {
+                // swiped left → go to next
+                showItem(currentIndex + 1);
+            }
+        }
+
+        touchStartX = null; // reset
+    });
+
+
     function closeModal() {
         document.activeElement.blur();
         modal.classList.remove('show');
