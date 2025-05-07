@@ -16,133 +16,91 @@
     <div class="splash-text" style="font-size: 8em">☕</div>
 </div>
 <header>
-    <!-- Language toggle (left) -->
     <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
-    <h1 data-i18n-key=""> ☕ </h1>
-    <!-- Centered title -->
-    <h1 data-i18n-key="coffee">Coffee</h1>
-    <!-- Theme toggle (right) -->
+    <h1>☕ Coffee & Tea</h1>
     <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
 
-<!-- Back button -->
 <a href="index.html" class="back-btn">
     <span class="arrow">←</span>
     <span data-i18n-key="backToMenu">Back to Menu</span>
 </a>
 
 <main>
-    <!-- Intro text -->
-    <p class="intro" data-i18n-key="coffeeIntro">
-        Browse our coffee below—or search for your favorite.
-    </p>
+    <p class="intro">Browse our coffee and tea selection below—or search for your favorite.</p>
 
-    <!-- Live search -->
     <input
             type="search"
             id="menuSearch"
-            data-i18n-key="searchCoffee"
-            placeholder="🔍 Search coffee…"
+            placeholder="🔍 Search beverages…"
     />
 
     <!-- Espresso category -->
     <section class="category">
-
-        <h2 data-i18n-key="espresso">Espresso</h2>
+        <h2>Espresso</h2>
         <div class="item-list">
-            <div class="item"
-                 data-name="Espresso"
-                 data-img="images/bacardi-rum.jpg"
-                 data-desc="Really good coffee."
-                 data-price="$3.00">
-                <span class="item-name" data-i18n-key="itemSingleEspresso">Single Espresso</span>
-                <span class="price">$3.00</span>
+            <div class="item" data-name="Espresso" data-img="" data-desc="Rich espresso shot." data-price="BGN 2.00">
+                <span class="item-name">Espresso</span>
+                <span class="price">BGN 2.00</span>
             </div>
-            <div class="item"
-                 data-name="Double Espresso"
-                 data-img="images/bacardi-rum.jpg"
-                 data-desc="Cool big coffee."
-                 data-price="$4.00">
-                <span class="item-name" data-i18n-key="itemDoubleEspresso">Double Espresso</span>
-                <span class="price">$4.00</span>
+            <div class="item" data-name="Double Espresso" data-img="" data-desc="Double shot of rich espresso." data-price="BGN 3.00">
+                <span class="item-name">Double Espresso</span>
+                <span class="price">BGN 3.00</span>
             </div>
         </div>
-
     </section>
 
     <!-- Milk-Based category -->
     <section class="category">
-        <h2 data-i18n-key="milkBased">Milk-Based</h2>
+        <h2>Milk-Based Coffee</h2>
         <div class="item-list">
-            <div class="item"
-                 data-name="Cappuccino"
-                 data-img="images/bacardi-rum.jpg"
-                 data-desc="Coolest cappuccino."
-                 data-price="$4.50">
-                <span class="item-name" data-i18n-key="itemCappuccino">Cappuccino</span>
-                <span class="price">$4.50</span>
+            <div class="item" data-name="Coffee with Milk" data-img="" data-desc="Smooth coffee blended with fresh milk." data-price="BGN 2.50">
+                <span class="item-name">Coffee with Milk</span>
+                <span class="price">BGN 2.50</span>
             </div>
-            <div class="item"
-                 data-name="Latte"
-                 data-img="images/bacardi-rum.jpg"
-                 data-desc="Cool big coffee."
-                 data-price="$4.00">
-                <span class="item-name" data-i18n-key="itemLatte">Latte</span>
-                <span class="price">$5.00</span>
-            </div>
-            <div class="item"
-                 data-name="Flat White"
-                 data-img="images/bacardi-rum.jpg"
-                 data-desc="Cool big coffee."
-                 data-price="$5.00">
-                <span class="item-name" data-i18n-key="itemFlatWhite">Flat White</span>
-                <span class="price">$5.00</span>
+            <div class="item" data-name="Cappuccino" data-img="" data-desc="Classic cappuccino with steamed milk foam." data-price="BGN 3.00">
+                <span class="item-name">Cappuccino</span>
+                <span class="price">BGN 3.00</span>
             </div>
         </div>
     </section>
 
-    <!-- Cold Coffee category -->
+    <!-- Tea category -->
     <section class="category">
-        <h2 data-i18n-key="coldCoffee">Cold Coffee</h2>
+        <h2>Tea Selection</h2>
         <div class="item-list">
-            <div class="item"
-                 data-name="Iced Latte"
-                 data-img="images/bacardi-rum.jpg"
-                 data-desc="Cool big coffee."
-                 data-price="$5.50">
-                <span class="item-name" data-i18n-key="itemIcedLatte">Iced Latte</span>
-                <span class="price">$5.50</span>
+            <div class="item" data-name="Chamomile Tea" data-img="" data-desc="Relaxing chamomile herbal tea." data-price="BGN 2.00">
+                <span class="item-name">Chamomile Tea</span>
+                <span class="price">BGN 2.00</span>
             </div>
-            <div class="item"
-                 data-name="Iced Latte"
-                 data-img="images/bacardi-rum.jpg"
-                 data-desc="Cool big coffee."
-                 data-price="$5.50">
-                <span class="item-name" data-i18n-key="itemColdBrew">Cold Brew</span>
-                <span class="price">$6.00</span>
+            <div class="item" data-name="Green Tea" data-img="" data-desc="Refreshing green tea." data-price="BGN 2.00">
+                <span class="item-name">Green Tea</span>
+                <span class="price">BGN 2.00</span>
+            </div>
+            <div class="item" data-name="Black Tea" data-img="" data-desc="Bold and robust black tea." data-price="BGN 2.00">
+                <span class="item-name">Black Tea</span>
+                <span class="price">BGN 2.00</span>
+            </div>
+            <div class="item" data-name="Forest Fruit Tea" data-img="" data-desc="Fruity and aromatic forest fruit tea." data-price="BGN 2.00">
+                <span class="item-name">Forest Fruit Tea</span>
+                <span class="price">BGN 2.00</span>
             </div>
         </div>
     </section>
+
 </main>
 
 <footer>
-    <span data-i18n-key="footerText">
-      &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
-    </span>
+    <span>&copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!</span>
 </footer>
 
-<!-- Fuse.js for fuzzy search -->
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
-<!-- Shared behavior: theme toggle, language, search -->
 <script src="main.js"></script>
-<!-- Item-modal logic -->
 <script src="modal.js"></script>
-<!-- Shared Info Modal -->
+
 <div id="itemModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-content">
         <button class="close-btn" aria-label="Close info">×</button>
-
-        <!-- ← Prev button -->
         <button class="nav-btn prev-btn" aria-label="Previous item">←</button>
 
         <img id="modalImage" src="" alt="" />
@@ -150,7 +108,6 @@
         <p id="modalDesc"></p>
         <p id="modalPrice" class="price"></p>
 
-        <!-- Next → button -->
         <button class="nav-btn next-btn" aria-label="Next item">→</button>
     </div>
 </div>
