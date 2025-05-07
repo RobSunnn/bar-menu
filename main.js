@@ -1,301 +1,286 @@
 // ===== main.js =====
 
-// ——— Translations ———
+// ——— 1) Translations ———
 const translations = {
     en: {
-        menuTitle:         '🍹 Bar Menu',
-        intro:             'Scan the QR on your table, then tap a category below…',
-        searchPlaceholder: '🔍 Search menu…',
-        alcoholPageTitle:  'Alcohol – Bar Menu',
-        alcohol:           'Alcohol',
-        alcoholIntro:      'Enjoy!',
-        searchAlcohol:     '🔍 Search alcohol…',
-        whiskey:           'Whiskey',
-        vodka:             'Vodka',
-        otherDrinks:       'Other Drinks',
-        beerPageTitle:     'Beer – Bar Menu',
-        beer:              'Beer',
-        beerIntro:         'Browse our beers below—or search for your favorite.',
-        searchBeer:        '🔍 Search beers…',
-        ourBeers:          'Our beers',
-        beverages:         'Beverages',
-        coffee:            'Coffee',
-        snacks:            'Snacks',
-        backToMenu:        'Back to Menu',
-        beveragesIntro:           'Browse our beverages below—or search for your favorite.',
-        searchBeverages:          '🔍 Search beverages…',
-        nonAlcoholicBeverages:    'Non-Alcoholic Beverages',
-        coffeeIntro:     'Browse our coffee below—or search for your favorite.',
-        searchCoffee:    '🔍 Search coffee…',
-        espresso:        'Espresso',
-        milkBased:       'Milk-Based',
-        coldCoffee:      'Cold Coffee',
-        itemSingleEspresso: 'Single Espresso',
-        itemDoubleEspresso: 'Double Espresso',
-        itemCappuccino:     'Cappuccino',
-        itemLatte:          'Latte',
-        itemFlatWhite:      'Flat White',
-        itemIcedLatte:      'Iced Latte',
-        itemColdBrew:       'Cold Brew',
-        footerText:        '© 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!'
+        menuTitle:             '🍹 Bar Menu',
+        intro:                 'Scan the QR on your table, then tap a category below…',
+        searchPlaceholder:     '🔍 Search menu…',
+        alcoholPageTitle:      'Alcohol – Bar Menu',
+        alcohol:               'Alcohol',
+        alcoholIntro:          'Browse our spirits below—or search for your favorite.',
+        searchAlcohol:         'Search alcohol…',
+        whiskey:               'Whiskey',
+        vodka:                 'Vodka',
+        otherDrinks:           'Other Drinks',
+        beerPageTitle:         'Beer – Bar Menu',
+        beer:                  'Beer',
+        beerIntro:             'Browse our beers below—or search for your favorite.',
+        searchBeer:            '🔍 Search beers…',
+        ourBeers:              'Our Beers',
+        beveragesPageTitle:    'Beverages – Bar Menu',
+        beverages:             'Beverages',
+        beveragesIntro:        'Browse our beverages below—or search for your favorite.',
+        searchBeverages:       '🔍 Search beverages…',
+        nonAlcoholicBeverages: 'Non-Alcoholic Beverages',
+        coffeePageTitle:       'Coffee – Bar Menu',
+        coffee:                'Coffee',
+        coffeeIntro:           'Browse our coffee below—or search for your favorite.',
+        searchCoffee:          '🔍 Search coffee…',
+        espresso:              'Espresso',
+        milkBased:             'Milk-Based',
+        coldCoffee:            'Cold Coffee',
+        snacksPageTitle:       'Snacks – Bar Menu',
+        snacks:                'Snacks',
+        snacksIntro:           'Browse our snacks below—or search for your favorite.',
+        searchSnacks:          '🔍 Search snacks…',
+        snacksCategory:        'Snacks',
+        backToMenu:            'Back to Menu',
+        footerText:            '© 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!'
     },
     bg: {
-        menuTitle:         '🍹 Бар Меню',
-        intro:             'Сканирайте QR кода на масата и изберете категория…',
-        searchPlaceholder: '🔍 Търси в менюто…',
-        alcoholPageTitle:  'Алкохол – Бар Меню',
-        alcohol:           'Алкохол',
-        alcoholIntro:      'Пожелаваме ви приятно прекарване!',
-        searchAlcohol:     '🔍 Търси алкохол…',
-        whiskey:           'Уиски',
-        vodka:             'Водка',
-        otherDrinks:       'Други напитки',
-        beerPageTitle:     'Бира – Бар Меню',
-        beer:              'Бира',
-        beerIntro:         'Разгледайте нашите бири или потърсете любимата си.',
-        searchBeer:        '🔍 Търси бири…',
-        ourBeers:          'Нашите бири',
-        beverages:         'Безалкохолни',
-        coffee:            'Кафе',
-        snacks:            'Снаксове',
-        backToMenu:        'Към менюто',
-        beveragesIntro:           'Разгледайте безалкохолните или потърсете любимото си.',
-        searchBeverages:          '🔍 Търси безалкохолни…',
-        nonAlcoholicBeverages:    'Безалкохолни напитки',
-        coffeeIntro:     'Разгледайте нашето кафе или потърсете любимото си.',
-        searchCoffee:    '🔍 Търси кафе…',
-        espresso:        'Еспресо',
-        milkBased:       'Напитки с мляко',
-        coldCoffee:      'Студено кафе',
-        itemSingleEspresso: 'Eспресо',
-        itemDoubleEspresso: 'Двойно еспресо',
-        itemCappuccino:     'Капучино',
-        itemLatte:          'Лате',
-        itemFlatWhite:      'Флат уайт',
-        itemIcedLatte:      'Лате на лед',
-        itemColdBrew:       'Студено кафе (Cold Brew)',
-        footerText:        '© 2025 OK SPORT Bar Digital Menu. Наслаждавайте се отговорно!'
+        menuTitle:             '🍹 Бар Меню',
+        intro:                 'Сканирайте QR кода на масата и изберете категория…',
+        searchPlaceholder:     '🔍 Търси в менюто…',
+        alcoholPageTitle:      'Алкохол – Бар Меню',
+        alcohol:               'Алкохол',
+        alcoholIntro:          'Разгледайте нашите напитки или потърсете любимата си.',
+        searchAlcohol:         '🔍 Търси алкохол…',
+        whiskey:               'Уиски',
+        vodka:                 'Водка',
+        otherDrinks:           'Други напитки',
+        beerPageTitle:         'Бира – Бар Меню',
+        beer:                  'Бира',
+        beerIntro:             'Разгледайте нашите бири или потърсете любимата си.',
+        searchBeer:            '🔍 Търси бири…',
+        ourBeers:              'Нашите бири',
+        beveragesPageTitle:    'Безалкохолни – Бар Меню',
+        beverages:             'Безалкохолни',
+        beveragesIntro:        'Разгледайте безалкохолните или потърсете любимото си.',
+        searchBeverages:       '🔍 Търси безалкохолни…',
+        nonAlcoholicBeverages: 'Безалкохолни напитки',
+        coffeePageTitle:       'Кафе – Бар Меню',
+        coffee:                'Кафе',
+        coffeeIntro:           'Разгледайте нашето кафе или потърсете любимото си.',
+        searchCoffee:          '🔍 Търси кафе…',
+        espresso:              'Еспресо',
+        milkBased:             'Напитки с мляко',
+        coldCoffee:            'Студено кафе',
+        snacksPageTitle:       'Снаксове – Бар Меню',
+        snacks:                'Снаксове',
+        snacksIntro:           'Разгледайте нашите снаксове или потърсете любимото си.',
+        searchSnacks:          '🔍 Търси снаксове…',
+        snacksCategory:        'Снаксове',
+        backToMenu:            'Към менюто',
+        footerText:            '© 2025 OK SPORT Bar Digital Menu. Наслаждавайте се отговорно!'
     }
 };
 
-// ——— Theme toggle (with persistence) ———
+// ——— 2) Apply saved theme (or default) immediately ———
+(function(){
+    const saved = localStorage.getItem('theme') || 'dark';
+    document.documentElement.classList.add(saved);
+})();
 
-// 1) On load: restore saved theme (default to dark)
-const savedTheme = localStorage.getItem('theme') || 'dark';
-if (savedTheme === 'light') {
-    document.documentElement.classList.add('light');
-} else {
-    document.documentElement.classList.remove('light');
-}
-
-// 2) Wire up the toggle button
-const themeToggle = document.getElementById('themeToggle');
-if (themeToggle) {
-    // Set the initial icon
-    themeToggle.textContent = document.documentElement.classList.contains('light') ? '🌙' : '🌞';
-
-    // On click: flip theme, update icon, and save
-    themeToggle.addEventListener('click', () => {
-        const isLight = document.documentElement.classList.toggle('light');
-        themeToggle.textContent = isLight ? '🌙' : '🌞';
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
-}
-
-
-
-// ——— 2) Debounce helper ———
+// ——— 3) Debounce helper ———
 function debounce(fn, delay = 200) {
     let timeout;
     return (...args) => {
         clearTimeout(timeout);
-        timeout = setTimeout(() => fn(...args), delay);
+        timeout = setTimeout(()=> fn(...args), delay);
     };
 }
 
-// ——— 3) Search setup ———
-let fuseItems, fuseCats;
-let sections, items, cats, navItems;
-const searchInput = document.getElementById('menuSearch');
-
-// “No results” banner (appended dynamically for category pages)
+// ——— 4) Search logic ———
+let fuseItems, fuseCats, sections, items, cats, navItems;
 const noResults = document.createElement('p');
+noResults.id = 'no-results';
 noResults.textContent = '😕 No matches found';
 noResults.style.textAlign = 'center';
 noResults.style.marginTop = '1rem';
 noResults.style.display = 'none';
 
-// Build or rebuild Fuse indexes (called after every language swap)
 function initSearch() {
-    // find category sections
     sections = Array.from(document.querySelectorAll('section.category'));
     if (sections.length) {
-        // category page: build items & categories arrays
-        items = [];
-        cats  = [];
+        items = []; cats = [];
         sections.forEach(sec => {
-            // category heading
-            cats.push({
-                name: sec.querySelector('h2').textContent.trim(),
-                section: sec
-            });
-            // each item
+            cats.push({ name: sec.querySelector('h2').textContent.trim(), section: sec });
             sec.querySelectorAll('.item').forEach(el => {
                 items.push({
                     name: el.querySelector('.item-name').textContent.trim(),
-                    el,
-                    section: sec
+                    el, section: sec
                 });
             });
         });
-
-        // Fuse options
-        const opts = {
-            keys: ['name'],
-            threshold: 0.3,
-            distance: 100,
-            minMatchCharLength: 1
-        };
-
-        // re-create indexes
+        const opts = { keys:['name'], threshold:0.3, distance:100, minMatchCharLength:1 };
         fuseItems = new Fuse(items, opts);
         fuseCats  = new Fuse(cats, opts);
-
-        // append noResults if not already
         const main = document.querySelector('main');
-        if (main && !noResults.parentElement) {
-            main.append(noResults);
-        }
+        if (main && !main.contains(noResults)) main.append(noResults);
     } else {
-        // index page: just grab nav items
         navItems = Array.from(document.querySelectorAll('nav .menu li'));
     }
 }
 
-// The single filter function for both index & category pages
 function filterContent(term) {
     const q = term.trim().toLowerCase();
-
-    // If empty, show everything
     if (!q) {
         if (sections.length) {
             sections.forEach(sec => {
                 sec.style.display = '';
-                sec.querySelectorAll('.item').forEach(i => (i.style.display = 'flex'));
+                sec.querySelectorAll('.item').forEach(i=>i.style.display='flex');
             });
         } else {
-            navItems.forEach(li => (li.style.display = ''));
+            navItems.forEach(li=>li.style.display='');
         }
         noResults.style.display = 'none';
         return;
     }
 
-    // Category page: fuzzy filter
     if (sections.length) {
-        const matchedCats  = new Set(fuseCats.search(q).map(r => r.item.section));
-        const matchedItems = new Set(fuseItems.search(q).map(r => r.item));
+        const matchedCats  = new Set(fuseCats.search(q).map(r=>r.item.section));
+        const matchedItems = new Set(fuseItems.search(q).map(r=>r.item));
         let anyVisible = false;
-
         sections.forEach(sec => {
             if (matchedCats.has(sec)) {
-                // whole section
-                sec.style.display = '';
-                sec.querySelectorAll('.item').forEach(i => (i.style.display = 'flex'));
+                sec.style.display='';
+                sec.querySelectorAll('.item').forEach(i=>i.style.display='flex');
                 anyVisible = true;
             } else {
-                // filter inside
-                let sectionHas = false;
-                sec.querySelectorAll('.item').forEach(iEl => {
-                    const data = items.find(d => d.el === iEl);
+                let found=false;
+                sec.querySelectorAll('.item').forEach(iEl=>{
+                    const data = items.find(d=>d.el===iEl);
                     if (matchedItems.has(data)) {
-                        iEl.style.display = 'flex';
-                        sectionHas = true;
+                        iEl.style.display='flex'; found=true;
                     } else {
-                        iEl.style.display = 'none';
+                        iEl.style.display='none';
                     }
                 });
-                sec.style.display = sectionHas ? '' : 'none';
-                if (sectionHas) anyVisible = true;
+                sec.style.display = found?'':'none';
+                if (found) anyVisible=true;
             }
         });
-
-        noResults.style.display = anyVisible ? 'none' : 'block';
-
+        noResults.style.display = anyVisible?'none':'block';
     } else {
-        // Index page: simple substring filter
-        navItems.forEach(li => {
-            li.style.display = li.textContent.toLowerCase().includes(q)
-                ? ''
-                : 'none';
+        navItems.forEach(li=>{
+            li.style.display = li.textContent.toLowerCase().includes(q)?'':'none';
         });
     }
 }
 
-// Wire up search input once
-if (searchInput) {
-    // initialize search data structures
-    initSearch();
-    // on user typing
-    searchInput.addEventListener('input', debounce(e => filterContent(e.target.value)));
-}
-
-// ——— 4) Internationalization ———
+// ——— 5) I18n ———
 function applyLanguage(lang) {
     document.documentElement.lang = lang;
-    // swap text for every element with data-i18n-key
-    document.querySelectorAll('[data-i18n-key]').forEach(el => {
-        const key = el.getAttribute('data-i18n-key');
-        const txt = translations[lang][key];
+    document.querySelectorAll('[data-i18n-key]').forEach(el=>{
+        const key = el.getAttribute('data-i18n-key'), txt = translations[lang][key];
         if (!txt) return;
-        if (el.tagName === 'INPUT' && el.placeholder != null) {
+        if (el.tagName==='INPUT' && 'placeholder' in el) {
             el.placeholder = txt;
         } else {
             el.textContent = txt;
         }
     });
-    // update toggle label
     const lt = document.getElementById('langToggle');
-    if (lt) lt.textContent = lang === 'en' ? 'BG' : 'EN';
+    if (lt) lt.textContent = lang==='en'?'BG':'EN';
     localStorage.setItem('lang', lang);
 
-    // **rebuild** search indexes now that headings may have changed
     initSearch();
-    // and reset any active filter
-    if (searchInput) filterContent('');
+    const si = document.getElementById('menuSearch');
+    if (si) filterContent(si.value);
 }
 
-// on load: apply saved or default language
-const savedLang = localStorage.getItem('lang') || 'en';
-applyLanguage(savedLang);
-
-// wire the language-toggle button
-const langToggle = document.getElementById('langToggle');
-if (langToggle) {
-    langToggle.addEventListener('click', () => {
-        const next = document.documentElement.lang === 'en' ? 'bg' : 'en';
-        applyLanguage(next);
-    });
-}
-
-// ——— Splash screen remover ———
+// ——— 6) Splash removal ———
 window.addEventListener('load', () => {
-    // wait 1.5 seconds, then fade out & remove the splash
-    setTimeout(() => {
+    setTimeout(()=>{
         const splash = document.getElementById('splash-screen');
-        if (!splash) return;
-        splash.classList.add('fade-out');
-        splash.addEventListener('transitionend', () => splash.remove());
+        if (splash) {
+            splash.classList.add('fade-out');
+            splash.addEventListener('transitionend', ()=> splash.remove());
+        }
     }, 700);
 });
 
-// ——— Clear storage when the page is truly unloaded ———
-window.addEventListener('pagehide', event => {
-    // If the page isn't being persisted to bfcache,
-    // we assume it's a “real” unload/close.
-    if (!event.persisted) {
+// ——— 7) Clear storage on true unload ———
+window.addEventListener('pagehide', e => {
+    if (!e.persisted) {
         sessionStorage.clear();
         localStorage.clear();
     }
 });
 
+// ——— 8) DOM wiring ———
+document.addEventListener('DOMContentLoaded', ()=> {
 
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.textContent = document.documentElement.classList.contains('light')?'🌙':'🌞';
+        themeToggle.addEventListener('click', ()=>{
+            const isLight = document.documentElement.classList.toggle('light');
+            themeToggle.textContent = isLight?'🌙':'🌞';
+            localStorage.setItem('theme', isLight?'light':'dark');
+        });
+    }
+
+    // Language toggle & initial apply
+    const savedLang = localStorage.getItem('lang')||'en';
+    applyLanguage(savedLang);
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', ()=>{
+            applyLanguage(document.documentElement.lang==='en'?'bg':'en');
+        });
+    }
+
+    // Live search
+    const searchInput = document.getElementById('menuSearch');
+    if (searchInput) {
+        initSearch();
+        searchInput.addEventListener('input', debounce(e=>filterContent(e.target.value)));
+    }
+
+    // Beer‐page modal (guarded)
+    const modal = document.getElementById('itemModal');
+    if (modal) {
+        const mImage   = document.getElementById('modalImage');
+        const mName    = document.getElementById('modalName');
+        const mDesc    = document.getElementById('modalDesc');
+        const mPrice   = document.getElementById('modalPrice');
+        const closeBtn = modal.querySelector('.close-btn');
+
+        const beerData = {
+            'Heineken':    { img:'https://cdn.nokovandson.com/crop/10145/750/734/go/go4PQOKjKN.webp',   desc:'A crisp, refreshing pale lager from the Netherlands.',         price:'$5.00' },
+            'Corona':      { img:'images/corona.jpg',     desc:'Light Mexican lager with a smooth finish.',                    price:'$5.50' },
+            'Guinness':    { img:'images/guinness.jpg',   desc:'Rich Irish dry stout with notes of coffee and chocolate.',      price:'$6.00' },
+            'Craft IPA':   { img:'images/craft-ipa.jpg',  desc:'Hoppy IPA bursting with citrus and pine aromas.',              price:'$6.50' }
+            // …etc…
+        };
+
+        document.querySelectorAll('.item-list .item').forEach(el => {
+            el.addEventListener('click', ()=> {
+                const name = el.querySelector('.item-name').textContent.trim();
+                const data = beerData[name];
+                if (!data) return;
+                mImage.src        = data.img;
+                mImage.alt        = name;
+                mName.textContent = name;
+                mDesc.textContent = data.desc;
+                mPrice.textContent= data.price;
+                modal.classList.add('show');
+                modal.setAttribute('aria-hidden','false');
+            });
+        });
+
+        closeBtn.addEventListener('click', ()=> {
+            modal.classList.remove('show');
+            modal.setAttribute('aria-hidden','true');
+        });
+        modal.addEventListener('click', e => {
+            if (e.target===modal) {
+                modal.classList.remove('show');
+                modal.setAttribute('aria-hidden','true');
+            }
+        });
+    }
+});

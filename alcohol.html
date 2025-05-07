@@ -13,16 +13,17 @@
 <body>
 <!-- Splash screen -->
 <div id="splash-screen">
-  <div class="splash-text" style="font-size: 8em">🍸</div>
+  <div class="splash-text" style="font-size:8em">🍸</div>
 </div>
+
 <header>
-  <!-- Language toggle left -->
+  <!-- Language toggle (left) -->
   <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
 
-  <h1 data-i18n-key=""> 🍸 </h1>
-  <!-- Centered page title -->
-  <h1 data-i18n-key="alcohol"></h1>
-  <!-- Theme toggle right -->
+  <!-- Centered title -->
+  <h1>🍸 Alcohol</h1>
+
+  <!-- Theme toggle (right) -->
   <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
 
@@ -46,35 +47,154 @@
           placeholder="🔍 Search alcohol…"
   />
 
-  <!-- Categories -->
+  <!-- Whiskey category -->
   <section class="category">
     <h2 data-i18n-key="whiskey">Whiskey</h2>
     <div class="item-list">
-      <div class="item"><span class="item-name">Jameson Irish Whiskey</span><span class="price">$8.00</span></div>
-      <div class="item"><span class="item-name">Jack Daniel's</span><span class="price">$9.00</span></div>
-      <div class="item"><span class="item-name">Chivas Regal 12</span><span class="price">$10.00</span></div>
-      <div class="item"><span class="item-name">Glenfiddich 15</span><span class="price">$12.00</span></div>
-      <div class="item"><span class="item-name">Johnnie Walker Black</span><span class="price">$11.00</span></div>
-      <div class="item"><span class="item-name">Maker's Mark</span><span class="price">$9.50</span></div>
-      <div class="item"><span class="item-name">Bushmills Original</span><span class="price">$7.50</span></div>
+      <div
+              class="item"
+              data-name="Jameson Irish Whiskey"
+              data-img="images/jameson.jpg"
+              data-desc="Smooth Irish whiskey triple distilled for great smoothness."
+              data-price="$8.00"
+      >
+        <span class="item-name">Jameson Irish Whiskey</span>
+        <span class="price">$8.00</span>
+      </div>
+      <div
+              class="item"
+              data-name="Jack Daniel's"
+              data-img="images/jack-daniels.jpg"
+              data-desc="Classic Tennessee whiskey with a rich, oaky flavor."
+              data-price="$9.00"
+      >
+        <span class="item-name">Jack Daniel's</span>
+        <span class="price">$9.00</span>
+      </div>
+      <div
+              class="item"
+              data-name="Chivas Regal 12"
+              data-img="images/chivas-regal-12.jpg"
+              data-desc="Blended Scotch whisky aged 12 years for a rich finish."
+              data-price="$10.00"
+      >
+        <span class="item-name">Chivas Regal 12</span>
+        <span class="price">$10.00</span>
+      </div>
+      <div
+              class="item"
+              data-name="Glenfiddich 15"
+              data-img="images/glenfiddich-15.jpg"
+              data-desc="Single malt aged in sherry casks for a fruity aroma."
+              data-price="$12.00"
+      >
+        <span class="item-name">Glenfiddich 15</span>
+        <span class="price">$12.00</span>
+      </div>
+      <div
+              class="item"
+              data-name="Johnnie Walker Black"
+              data-img="images/johnnie-walker-black.jpg"
+              data-desc="Rich and smoky blended Scotch with bold flavors."
+              data-price="$11.00"
+      >
+        <span class="item-name">Johnnie Walker Black</span>
+        <span class="price">$11.00</span>
+      </div>
+      <div
+              class="item"
+              data-name="Maker's Mark"
+              data-img="images/makers-mark.jpg"
+              data-desc="Handmade bourbon with a sweeter, full-bodied taste."
+              data-price="$9.50"
+      >
+        <span class="item-name">Maker's Mark</span>
+        <span class="price">$9.50</span>
+      </div>
+      <div
+              class="item"
+              data-name="Bushmills Original"
+              data-img="images/bushmills-original.jpg"
+              data-desc="Smooth Irish whiskey with honeyed notes."
+              data-price="$7.50"
+      >
+        <span class="item-name">Bushmills Original</span>
+        <span class="price">$7.50</span>
+      </div>
     </div>
   </section>
 
+  <!-- Vodka category -->
   <section class="category">
     <h2 data-i18n-key="vodka">Vodka</h2>
     <div class="item-list">
-      <div class="item"><span class="item-name">Absolut Vodka</span><span class="price">$6.00</span></div>
-      <div class="item"><span class="item-name">Grey Goose</span><span class="price">$8.50</span></div>
-      <div class="item"><span class="item-name">Belvedere</span><span class="price">$9.00</span></div>
+      <div
+              class="item"
+              data-name="Absolut Vodka"
+              data-img="images/absolut-vodka.jpg"
+              data-desc="Premium Swedish vodka made from winter wheat."
+              data-price="$6.00"
+      >
+        <span class="item-name">Absolut Vodka</span>
+        <span class="price">$6.00</span>
+      </div>
+      <div
+              class="item"
+              data-name="Grey Goose"
+              data-img="images/grey-goose.jpg"
+              data-desc="French vodka known for its crisp, clean taste."
+              data-price="$8.50"
+      >
+        <span class="item-name">Grey Goose</span>
+        <span class="price">$8.50</span>
+      </div>
+      <div
+              class="item"
+              data-name="Belvedere"
+              data-img="images/belvedere.jpg"
+              data-desc="Polish rye vodka with a velvety texture."
+              data-price="$9.00"
+      >
+        <span class="item-name">Belvedere</span>
+        <span class="price">$9.00</span>
+      </div>
     </div>
   </section>
 
+  <!-- Other Drinks category -->
   <section class="category">
     <h2 data-i18n-key="otherDrinks">Other Drinks</h2>
     <div class="item-list">
-      <div class="item"><span class="item-name">Bacardi Rum</span><span class="price">$7.00</span></div>
-      <div class="item"><span class="item-name">Campari</span><span class="price">$7.50</span></div>
-      <div class="item"><span class="item-name">Jägermeister</span><span class="price">$6.50</span></div>
+      <div
+              class="item"
+              data-name="Bacardi Rum"
+              data-img="images/bacardi-rum.jpg"
+              data-desc="Light white rum perfect for cocktails."
+              data-price="$7.00"
+      >
+        <span class="item-name">Bacardi Rum</span>
+        <span class="price">$7.00</span>
+      </div>
+      <div
+              class="item"
+              data-name="Campari"
+              data-img="images/campari.jpg"
+              data-desc="Italian bitter aperitif with herbal notes."
+              data-price="$7.50"
+      >
+        <span class="item-name">Campari</span>
+        <span class="price">$7.50</span>
+      </div>
+      <div
+              class="item"
+              data-name="Jägermeister"
+              data-img="images/jagermeister.jpg"
+              data-desc="German herbal liqueur served ice cold."
+              data-price="$6.50"
+      >
+        <span class="item-name">Jägermeister</span>
+        <span class="price">$6.50</span>
+      </div>
     </div>
   </section>
 </main>
@@ -87,7 +207,27 @@
 
 <!-- Fuse.js for fuzzy search -->
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
-<!-- Your shared JS -->
+<!-- Shared behavior: theme, i18n, search -->
 <script src="main.js"></script>
+<!-- Item-modal logic -->
+<script src="modal.js"></script>
+
+<!-- Shared Info Modal -->
+<div id="itemModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Close info">×</button>
+
+    <!-- ← Prev button -->
+    <button class="nav-btn prev-btn" aria-label="Previous item">←</button>
+
+    <img id="modalImage" src="" alt="" />
+    <h3 id="modalName"></h3>
+    <p id="modalDesc"></p>
+    <p id="modalPrice" class="price"></p>
+
+    <!-- Next → button -->
+    <button class="nav-btn next-btn" aria-label="Next item">→</button>
+  </div>
+</div>
 </body>
 </html>

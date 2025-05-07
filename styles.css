@@ -301,3 +301,106 @@ header {
     position: absolute;
     right: var(--gap);
 }
+
+/* modal backdrop */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;               /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+}
+
+/* show it with flex */
+.modal.show {
+    display: flex;
+}
+
+/* modal box */
+.modal-content {
+    background: var(--bg);
+    color: var(--fg);
+    border-radius: var(--radius);
+    max-width: 90%;
+    width: 320px;
+    padding: var(--gap);
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* close button */
+.close-btn {
+    position: absolute;
+    top: 0.5rem; right: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--fg);
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+    min-height: 90vh;
+}
+.modal.show {
+    display: flex;
+}
+.modal-content img {
+    width: 90%;
+    height: 150px;           /* your chosen height */
+    border-radius: var(--radius);
+    margin-bottom: var(--gap);
+}
+.close-btn {
+    position: absolute; top: 0.5rem; right: 0.5rem;
+    background: none; border: none; font-size: 1.5rem;
+    color: var(--fg); cursor: pointer;
+}
+.modal-content img {
+    width: 100%; border-radius: var(--radius); margin-bottom: var(--gap);
+}
+#modalName { margin:0.5rem 0 0.25rem; font-size:1.25rem; }
+#modalDesc { margin-bottom:var(--gap); font-size:0.95rem; }
+
+/* Ensure the modal‐content is the positioning context */
+.modal-content {
+    position: relative;
+}
+
+/* Keep the same absolute positioning & sizing as before */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;         /* or whatever width you need for a comfortable hit area */
+    height: 3rem;        /* matching height */
+    background: none;    /* no background */
+    border: none;        /* no border */
+    color: transparent;  /* hides any text or icon */
+    opacity: 0;          /* fully invisible */
+    cursor: pointer;
+    /* pointer-events remains auto so it’s still clickable */
+}
+
+/* Position Prev on the left, Next on the right */
+.prev-btn {
+    left: 1rem;
+}
+
+.next-btn {
+    right: 1rem;
+}
+.nav-btn:hover {
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+}
+

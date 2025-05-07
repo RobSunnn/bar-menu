@@ -47,32 +47,54 @@
 
     <!-- Espresso category -->
     <section class="category">
+
         <h2 data-i18n-key="espresso">Espresso</h2>
         <div class="item-list">
-            <div class="item">
+            <div class="item"
+                 data-name="Espresso"
+                 data-img="images/bacardi-rum.jpg"
+                 data-desc="Really good coffee."
+                 data-price="$3.00">
                 <span class="item-name" data-i18n-key="itemSingleEspresso">Single Espresso</span>
                 <span class="price">$3.00</span>
             </div>
-            <div class="item">
+            <div class="item"
+                 data-name="Double Espresso"
+                 data-img="images/bacardi-rum.jpg"
+                 data-desc="Cool big coffee."
+                 data-price="$4.00">
                 <span class="item-name" data-i18n-key="itemDoubleEspresso">Double Espresso</span>
                 <span class="price">$4.00</span>
             </div>
         </div>
+
     </section>
 
     <!-- Milk-Based category -->
     <section class="category">
         <h2 data-i18n-key="milkBased">Milk-Based</h2>
         <div class="item-list">
-            <div class="item">
+            <div class="item"
+                 data-name="Cappuccino"
+                 data-img="images/bacardi-rum.jpg"
+                 data-desc="Coolest cappuccino."
+                 data-price="$4.50">
                 <span class="item-name" data-i18n-key="itemCappuccino">Cappuccino</span>
                 <span class="price">$4.50</span>
             </div>
-            <div class="item">
+            <div class="item"
+                 data-name="Latte"
+                 data-img="images/bacardi-rum.jpg"
+                 data-desc="Cool big coffee."
+                 data-price="$4.00">
                 <span class="item-name" data-i18n-key="itemLatte">Latte</span>
                 <span class="price">$5.00</span>
             </div>
-            <div class="item">
+            <div class="item"
+                 data-name="Flat White"
+                 data-img="images/bacardi-rum.jpg"
+                 data-desc="Cool big coffee."
+                 data-price="$5.00">
                 <span class="item-name" data-i18n-key="itemFlatWhite">Flat White</span>
                 <span class="price">$5.00</span>
             </div>
@@ -83,11 +105,19 @@
     <section class="category">
         <h2 data-i18n-key="coldCoffee">Cold Coffee</h2>
         <div class="item-list">
-            <div class="item">
+            <div class="item"
+                 data-name="Iced Latte"
+                 data-img="images/bacardi-rum.jpg"
+                 data-desc="Cool big coffee."
+                 data-price="$5.50">
                 <span class="item-name" data-i18n-key="itemIcedLatte">Iced Latte</span>
                 <span class="price">$5.50</span>
             </div>
-            <div class="item">
+            <div class="item"
+                 data-name="Iced Latte"
+                 data-img="images/bacardi-rum.jpg"
+                 data-desc="Cool big coffee."
+                 data-price="$5.50">
                 <span class="item-name" data-i18n-key="itemColdBrew">Cold Brew</span>
                 <span class="price">$6.00</span>
             </div>
@@ -105,5 +135,24 @@
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
 <!-- Shared behavior: theme toggle, language, search -->
 <script src="main.js"></script>
+<!-- Item-modal logic -->
+<script src="modal.js"></script>
+<!-- Shared Info Modal -->
+<div id="itemModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+        <button class="close-btn" aria-label="Close info">×</button>
+
+        <!-- ← Prev button -->
+        <button class="nav-btn prev-btn" aria-label="Previous item">←</button>
+
+        <img id="modalImage" src="" alt="" />
+        <h3 id="modalName"></h3>
+        <p id="modalDesc"></p>
+        <p id="modalPrice" class="price"></p>
+
+        <!-- Next → button -->
+        <button class="nav-btn next-btn" aria-label="Next item">→</button>
+    </div>
+</div>
 </body>
 </html>

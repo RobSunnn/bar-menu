@@ -10,18 +10,18 @@
   <!-- Shared styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="beverages-page">
 <!-- Splash screen -->
 <div id="splash-screen">
-  <div class="splash-text" style="font-size: 8em">🥤</div>
+  <div class="splash-text" style="font-size:8em">🥤</div>
 </div>
+
 <header>
-  <!-- Language toggle -->
+  <!-- Language toggle (left) -->
   <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
-  <h1 data-i18n-key="">🥤</h1>
   <!-- Centered title -->
-  <h1 data-i18n-key="beverages">Beverages</h1>
-  <!-- Theme toggle -->
+  <h1 data-i18n-key="beverages">🥤 Beverages</h1>
+  <!-- Theme toggle (right) -->
   <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
 
@@ -45,23 +45,47 @@
           placeholder="🔍 Search beverages…"
   />
 
-  <!-- Category -->
+  <!-- Beverages category -->
   <section class="category">
     <h2 data-i18n-key="nonAlcoholicBeverages">Non-Alcoholic Beverages</h2>
     <div class="item-list">
-      <div class="item">
+      <div
+              class="item"
+              data-name="Coca-Cola"
+              data-img="images/coca-cola.jpg"
+              data-desc="Classic cola with a crisp, refreshing taste."
+              data-price="$3.00"
+      >
         <span class="item-name">Coca-Cola</span>
         <span class="price">$3.00</span>
       </div>
-      <div class="item">
+      <div
+              class="item"
+              data-name="Orange Juice"
+              data-img="images/orange-juice.jpg"
+              data-desc="Freshly squeezed orange juice, no added sugar."
+              data-price="$3.50"
+      >
         <span class="item-name">Orange Juice</span>
         <span class="price">$3.50</span>
       </div>
-      <div class="item">
+      <div
+              class="item"
+              data-name="Sparkling Water"
+              data-img="images/sparkling-water.jpg"
+              data-desc="Bubbly mineral water to quench your thirst."
+              data-price="$2.50"
+      >
         <span class="item-name">Sparkling Water</span>
         <span class="price">$2.50</span>
       </div>
-      <div class="item">
+      <div
+              class="item"
+              data-name="Lemonade"
+              data-img="images/lemonade.jpg"
+              data-desc="Homemade lemonade with a hint of mint."
+              data-price="$3.00"
+      >
         <span class="item-name">Lemonade</span>
         <span class="price">$3.00</span>
       </div>
@@ -79,5 +103,25 @@
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
 <!-- Shared behavior: theme, i18n, search -->
 <script src="main.js"></script>
+<!-- Item-modal logic -->
+<script src="modal.js"></script>
+
+<!-- Shared Info Modal -->
+<div id="itemModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Close info">×</button>
+
+    <!-- ← Prev button -->
+    <button class="nav-btn prev-btn" aria-label="Previous item">←</button>
+
+    <img id="modalImage" src="" alt="" />
+    <h3 id="modalName"></h3>
+    <p id="modalDesc"></p>
+    <p id="modalPrice" class="price"></p>
+
+    <!-- Next → button -->
+    <button class="nav-btn next-btn" aria-label="Next item">→</button>
+  </div>
+</div>
 </body>
 </html>

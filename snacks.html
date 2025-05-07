@@ -49,19 +49,35 @@
   <section class="category">
     <h2 data-i18n-key="snacksCategory">Snacks</h2>
     <div class="item-list">
-      <div class="item">
+      <div class="item"
+           data-name="Nachos"
+           data-img="images/bacardi-rum.jpg"
+           data-desc="Nachos."
+           data-price="$5.00">
         <span class="item-name" data-i18n-key="itemNachos">Nachos</span>
         <span class="price">$5.00</span>
       </div>
-      <div class="item">
+      <div class="item"
+           data-name="Chicken Wings"
+           data-img="images/bacardi-rum.jpg"
+           data-desc="Finger liking good."
+           data-price="$6.50">
         <span class="item-name" data-i18n-key="itemChickenWings">Chicken Wings</span>
         <span class="price">$6.50</span>
       </div>
-      <div class="item">
+      <div class="item"
+           data-name="Fries"
+           data-img="images/bacardi-rum.jpg"
+           data-desc="Best fries in the world."
+           data-price="$4.00">
         <span class="item-name" data-i18n-key="itemFries">Fries</span>
         <span class="price">$4.00</span>
       </div>
-      <div class="item">
+      <div class="item"
+           data-name="Sliders"
+           data-img="images/bacardi-rum.jpg"
+           data-desc="Oooooo tasty sliders."
+           data-price="$7.00">
         <span class="item-name" data-i18n-key="itemSliders">Sliders</span>
         <span class="price">$7.00</span>
       </div>
@@ -79,5 +95,24 @@
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
 <!-- Shared behavior: theme toggle, language, search -->
 <script src="main.js"></script>
+<!-- Item-modal logic -->
+<script src="modal.js"></script>
+<!-- Shared Info Modal -->
+<div id="itemModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Close info">×</button>
+
+    <!-- ← Prev button -->
+    <button class="nav-btn prev-btn" aria-label="Previous item">←</button>
+
+    <img id="modalImage" src="" alt="" />
+    <h3 id="modalName"></h3>
+    <p id="modalDesc"></p>
+    <p id="modalPrice" class="price"></p>
+
+    <!-- Next → button -->
+    <button class="nav-btn next-btn" aria-label="Next item">→</button>
+  </div>
+</div>
 </body>
 </html>

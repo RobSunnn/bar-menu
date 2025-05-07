@@ -10,17 +10,17 @@
   <!-- Shared styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="beer-page">
 <!-- Splash screen -->
 <div id="splash-screen">
-  <div class="splash-text" style="font-size: 8em">🍺</div>
+  <div class="splash-text" style="font-size:8em">🍺</div>
 </div>
+
 <header>
   <!-- Language toggle -->
   <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
-  <h1 data-i18n-key=""> 🍺 </h1>
   <!-- Centered title -->
-  <h1 data-i18n-key="beer">Beer</h1>
+  <h1 data-i18n-key="beer">🍺 Beer</h1>
   <!-- Theme toggle -->
   <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
@@ -49,21 +49,45 @@
   <section class="category">
     <h2 data-i18n-key="ourBeers">Our Beers</h2>
     <div class="item-list">
-      <div class="item">
-        <span class="item-name">Heineken</span>
-        <span class="price">$5.00</span>
+      <div
+              class="item"
+              data-name="Stella Artois"
+              data-img="images/stella-artois.jpg"
+              data-desc="A crisp, refreshing pale lager from the Netherlands."
+              data-price="BGN 3.50"
+      >
+        <span class="item-name">Stella Artois</span>
+        <span class="price">BGN 3.50</span>
       </div>
-      <div class="item">
+      <div
+              class="item"
+              data-name="Corona"
+              data-img="images/corona-extra.jfif"
+              data-desc="Light Mexican lager with a smooth, easy finish."
+              data-price="BGN 5.00"
+      >
         <span class="item-name">Corona</span>
-        <span class="price">$5.50</span>
+        <span class="price">BGN 5.00</span>
       </div>
-      <div class="item">
-        <span class="item-name">Guinness</span>
-        <span class="price">$6.00</span>
+      <div
+              class="item"
+              data-name="Kamenitza"
+              data-img="images/kamenitza.jpg"
+              data-desc="All the men knows why."
+              data-price="BGN 3.00"
+      >
+        <span class="item-name">Kamenitza</span>
+        <span class="price">BGN 3.00</span>
       </div>
-      <div class="item">
-        <span class="item-name">Craft IPA</span>
-        <span class="price">$6.50</span>
+      <div
+              class="item"
+              data-name="Burgasko"
+              data-img="images/burgasko.jfif"
+              data-desc="Don't worry the sea is here."
+              data-price="BGN 3.00"
+      >
+        <span class="item-name">Burgasko</span>
+        <span class="price">BGN 3.00</span>
       </div>
     </div>
   </section>
@@ -77,7 +101,28 @@
 
 <!-- Fuse.js (for fuzzy search) -->
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
-<!-- Your shared JS (theme toggle, i18n, search) -->
+<!-- Shared behavior: theme, i18n, search -->
 <script src="main.js"></script>
+<!-- Item-modal logic -->
+<script src="modal.js"></script>
+
+<!-- Shared Info Modal -->
+<div id="itemModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Close info">×</button>
+
+    <!-- ← Prev button -->
+    <button class="nav-btn prev-btn" aria-label="Previous item">←</button>
+
+    <img id="modalImage" src="" alt="" />
+    <h3 id="modalName"></h3>
+    <p id="modalDesc"></p>
+    <p id="modalPrice" class="price"></p>
+
+    <!-- Next → button -->
+    <button class="nav-btn next-btn" aria-label="Next item">→</button>
+  </div>
+</div>
+
 </body>
 </html>
