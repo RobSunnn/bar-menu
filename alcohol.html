@@ -11,222 +11,126 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!-- Splash screen -->
 <div id="splash-screen">
   <div class="splash-text" style="font-size:8em">🍸</div>
 </div>
 
 <header>
-  <!-- Language toggle (left) -->
   <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
-
-  <!-- Centered title -->
   <h1>🍸 Alcohol</h1>
-
-  <!-- Theme toggle (right) -->
   <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
 
-<!-- Back button -->
 <a href="index.html" class="back-btn">
   <span class="arrow">←</span>
-  <span data-i18n-key="backToMenu">Back to Menu</span>
+  <span>Back to Menu</span>
 </a>
 
 <main>
-  <!-- Intro text -->
-  <p class="intro" data-i18n-key="alcoholIntro">
-    Browse our spirits below—or search for your favorite.
-  </p>
+  <p class="intro">Browse our spirits below—or search for your favorite.</p>
 
-  <!-- Live search -->
-  <input
-          type="search"
-          id="menuSearch"
-          data-i18n-key="searchAlcohol"
-          placeholder="🔍 Search alcohol…"
-  />
+  <input type="search" id="menuSearch" placeholder="🔍 Search alcohol…"/>
 
   <!-- Whiskey category -->
   <section class="category">
-    <h2 data-i18n-key="whiskey">Whiskey</h2>
+    <h2>Whiskey</h2>
     <div class="item-list">
-      <div
-              class="item"
-              data-name="Jameson Irish Whiskey"
-              data-img="images/jameson.jpg"
-              data-desc="Smooth Irish whiskey triple distilled for great smoothness."
-              data-price="$8.00"
-      >
-        <span class="item-name">Jameson Irish Whiskey</span>
-        <span class="price">$8.00</span>
+      <div class="item" data-name="Loch Lomond 50ml" data-img="" data-desc="Smooth Scotch whiskey." data-price="BGN 6">
+        <span class="item-name">Loch Lomond 50ml</span>
+        <span class="price">BGN 6</span>
       </div>
-      <div
-              class="item"
-              data-name="Jack Daniel's"
-              data-img="images/jack-daniels.jpg"
-              data-desc="Classic Tennessee whiskey with a rich, oaky flavor."
-              data-price="$9.00"
-      >
-        <span class="item-name">Jack Daniel's</span>
-        <span class="price">$9.00</span>
+      <div class="item" data-name="Glenfiddich 50ml" data-img="" data-desc="Premium single malt Scotch whiskey." data-price="BGN 9">
+        <span class="item-name">Glenfiddich 50ml</span>
+        <span class="price">BGN 9</span>
       </div>
-      <div
-              class="item"
-              data-name="Chivas Regal 12"
-              data-img="images/chivas-regal-12.jpg"
-              data-desc="Blended Scotch whisky aged 12 years for a rich finish."
-              data-price="$10.00"
-      >
-        <span class="item-name">Chivas Regal 12</span>
-        <span class="price">$10.00</span>
+      <div class="item" data-name="Jack Daniels 50ml" data-img="" data-desc="Classic Tennessee whiskey." data-price="BGN 6">
+        <span class="item-name">Jack Daniels 50ml</span>
+        <span class="price">BGN 6</span>
       </div>
-      <div
-              class="item"
-              data-name="Glenfiddich 15"
-              data-img="images/glenfiddich-15.jpg"
-              data-desc="Single malt aged in sherry casks for a fruity aroma."
-              data-price="$12.00"
-      >
-        <span class="item-name">Glenfiddich 15</span>
-        <span class="price">$12.00</span>
+      <div class="item" data-name="Chivas 50ml" data-img="" data-desc="Smooth blended Scotch whiskey." data-price="BGN 9">
+        <span class="item-name">Chivas 50ml</span>
+        <span class="price">BGN 9</span>
       </div>
-      <div
-              class="item"
-              data-name="Johnnie Walker Black"
-              data-img="images/johnnie-walker-black.jpg"
-              data-desc="Rich and smoky blended Scotch with bold flavors."
-              data-price="$11.00"
-      >
-        <span class="item-name">Johnnie Walker Black</span>
-        <span class="price">$11.00</span>
+      <div class="item" data-name="Black Johnnie" data-img="" data-desc="Bold, rich blended Scotch." data-price="BGN 9">
+        <span class="item-name">Black Johnnie</span>
+        <span class="price">BGN 9</span>
       </div>
-      <div
-              class="item"
-              data-name="Maker's Mark"
-              data-img="images/makers-mark.jpg"
-              data-desc="Handmade bourbon with a sweeter, full-bodied taste."
-              data-price="$9.50"
-      >
-        <span class="item-name">Maker's Mark</span>
-        <span class="price">$9.50</span>
-      </div>
-      <div
-              class="item"
-              data-name="Bushmills Original"
-              data-img="images/bushmills-original.jpg"
-              data-desc="Smooth Irish whiskey with honeyed notes."
-              data-price="$7.50"
-      >
-        <span class="item-name">Bushmills Original</span>
-        <span class="price">$7.50</span>
+      <div class="item" data-name="Jack Daniels Apple Liquer 50ml" data-img="" data-desc="Smooth apple-flavored whiskey." data-price="BGN 6">
+        <span class="item-name">Jack Daniels Apple Liquer 50ml</span>
+        <span class="price">BGN 6</span>
       </div>
     </div>
   </section>
 
   <!-- Vodka category -->
   <section class="category">
-    <h2 data-i18n-key="vodka">Vodka</h2>
+    <h2>Vodka</h2>
     <div class="item-list">
-      <div
-              class="item"
-              data-name="Absolut Vodka"
-              data-img="images/absolut-vodka.jpg"
-              data-desc="Premium Swedish vodka made from winter wheat."
-              data-price="$6.00"
-      >
-        <span class="item-name">Absolut Vodka</span>
-        <span class="price">$6.00</span>
+      <div class="item" data-name="Finlandia 50ml" data-img="" data-desc="Pure Finnish vodka." data-price="BGN 5">
+        <span class="item-name">Finlandia 50ml</span>
+        <span class="price">BGN 5</span>
       </div>
-      <div
-              class="item"
-              data-name="Grey Goose"
-              data-img="images/grey-goose.jpg"
-              data-desc="French vodka known for its crisp, clean taste."
-              data-price="$8.50"
-      >
-        <span class="item-name">Grey Goose</span>
-        <span class="price">$8.50</span>
+      <div class="item" data-name="Absolut 50ml" data-img="" data-desc="Premium Swedish vodka." data-price="BGN 5">
+        <span class="item-name">Absolut 50ml</span>
+        <span class="price">BGN 5</span>
       </div>
-      <div
-              class="item"
-              data-name="Belvedere"
-              data-img="images/belvedere.jpg"
-              data-desc="Polish rye vodka with a velvety texture."
-              data-price="$9.00"
-      >
-        <span class="item-name">Belvedere</span>
-        <span class="price">$9.00</span>
+      <div class="item" data-name="Belvedere 50ml" data-img="" data-desc="Smooth Polish rye vodka." data-price="BGN 9">
+        <span class="item-name">Belvedere 50ml</span>
+        <span class="price">BGN 9</span>
       </div>
     </div>
   </section>
 
-  <!-- Other Drinks category -->
+  <!-- Wine category -->
   <section class="category">
-    <h2 data-i18n-key="otherDrinks">Other Drinks</h2>
+    <h2>Wine - Starosel</h2>
     <div class="item-list">
-      <div
-              class="item"
-              data-name="Bacardi Rum"
-              data-img="images/bacardi-rum.jpg"
-              data-desc="Light white rum perfect for cocktails."
-              data-price="$7.00"
-      >
-        <span class="item-name">Bacardi Rum</span>
-        <span class="price">$7.00</span>
+      <div class="item" data-name="Starosel White 150ml" data-img="" data-desc="Crisp white wine from Starosel." data-price="BGN 5.50">
+        <span class="item-name">White Wine 150ml</span>
+        <span class="price">BGN 5.50</span>
       </div>
-      <div
-              class="item"
-              data-name="Campari"
-              data-img="images/campari.jpg"
-              data-desc="Italian bitter aperitif with herbal notes."
-              data-price="$7.50"
-      >
-        <span class="item-name">Campari</span>
-        <span class="price">$7.50</span>
+      <div class="item" data-name="Starosel Red 150ml" data-img="" data-desc="Rich red wine from Starosel." data-price="BGN 5.50">
+        <span class="item-name">Red Wine 150ml</span>
+        <span class="price">BGN 5.50</span>
       </div>
-      <div
-              class="item"
-              data-name="Jägermeister"
-              data-img="images/jagermeister.jpg"
-              data-desc="German herbal liqueur served ice cold."
-              data-price="$6.50"
-      >
-        <span class="item-name">Jägermeister</span>
-        <span class="price">$6.50</span>
+    </div>
+  </section>
+
+  <!-- Other Alcoholic Drinks -->
+  <section class="category">
+    <h2>Other Alcoholic Drinks</h2>
+    <div class="item-list">
+      <div class="item" data-name="Dry Gin 50ml" data-img="" data-desc="Classic dry gin." data-price="BGN 2.50">
+        <span class="item-name">Dry Gin 50ml</span>
+        <span class="price">BGN 2.50</span>
+      </div>
+      <div class="item" data-name="Baileys 50ml" data-img="" data-desc="Creamy Irish liqueur." data-price="BGN 4.50">
+        <span class="item-name">Baileys 50ml</span>
+        <span class="price">BGN 4.50</span>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-    <span data-i18n-key="footerText">
-      &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
-    </span>
+  <span>&copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!</span>
 </footer>
 
-<!-- Fuse.js for fuzzy search -->
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
-<!-- Shared behavior: theme, i18n, search -->
 <script src="main.js"></script>
-<!-- Item-modal logic -->
 <script src="modal.js"></script>
 
-<!-- Shared Info Modal -->
 <div id="itemModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal-content">
-    <button class="close-btn" aria-label="Close info">×</button>
-
-    <!-- ← Prev button -->
-    <button class="nav-btn prev-btn" aria-label="Previous item">←</button>
+    <button class="close-btn">×</button>
+    <button class="nav-btn prev-btn">←</button>
 
     <img id="modalImage" src="" alt="" />
     <h3 id="modalName"></h3>
     <p id="modalDesc"></p>
     <p id="modalPrice" class="price"></p>
 
-    <!-- Next → button -->
-    <button class="nav-btn next-btn" aria-label="Next item">→</button>
+    <button class="nav-btn next-btn">→</button>
   </div>
 </div>
 </body>
