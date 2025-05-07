@@ -374,6 +374,8 @@ header {
 /* Ensure the modal‐content is the positioning context */
 .modal-content {
     position: relative;
+    touch-action: pan-y;             /* allow vertical scroll, block horizontal browser gestures */
+    overscroll-behavior: contain;    /* stop scroll chaining to the body */
 }
 
 /* Keep the same absolute positioning & sizing as before */
