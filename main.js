@@ -288,10 +288,14 @@ window.addEventListener('load', () => {
     }, 700);
 });
 
-window.addEventListener('unload', () => {
-    // WARNING: this will wipe *all* localStorage for your site,
-    // even in other tabs. Use with care.
-    localStorage.clear();
+// ——— Clear storage when the page is truly unloaded ———
+window.addEventListener('pagehide', event => {
+    // If the page isn't being persisted to bfcache,
+    // we assume it's a “real” unload/close.
+    if (!event.persisted) {
+        sessionStorage.clear();
+        localStorage.clear();
+    }
 });
 
 
