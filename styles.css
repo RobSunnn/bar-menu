@@ -234,26 +234,48 @@ nav .menu li a:focus {
     padding-bottom: 0.25rem;
     margin-bottom: var(--gap);
 }
+/* Grid for the list of cards */
 .item-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: var(--gap);
 }
+
+/* Card base styles */
 .item {
-    background: rgba(255,255,255,0.05);
-    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: var(--radius);
+    padding: 1rem;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    transition: background 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Lift on hover */
 .item:hover {
-    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.1);
 }
+
+/* Product name */
 .item-name {
-    font-weight: 500;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    color: var(--fg);
 }
+
+/* Price styling */
+.price {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-align: right;
+}
+
 .price {
     font-weight: 600;
 }
