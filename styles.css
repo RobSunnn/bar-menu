@@ -1,0 +1,196 @@
+/* styles.css */
+
+/* Theme vars */
+:root {
+    --bg: #121212;
+    --fg: #f0f0f0;
+    --accent: #e91e63;
+    --accent-dark: #b0003a;
+    --radius: 0.5rem;
+    --gap: 1rem;
+}
+
+/* Light mode override */
+:root.light {
+    --bg: #f9f9f9;
+    --fg: #1c1c1c;
+    --accent: #e91e63;
+    --accent-dark: #b0003a;
+}
+
+/* Reset + globals */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--accent);
+    padding: 1rem var(--gap);
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    position: relative;
+}
+header h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+/* Theme toggle button */
+#themeToggle {
+    position: absolute;
+    top: 50%;
+    right: var(--gap);
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+/* Main & intro text */
+main {
+    flex: 1;
+    padding: var(--gap);
+}
+.intro {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Live search input */
+#menuSearch {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: var(--gap);
+    border: none;
+    border-radius: var(--radius);
+    background: rgba(255,255,255,0.05);
+    color: var(--fg);
+    font-size: 1rem;
+}
+
+/* Sticky bottom nav */
+nav {
+    position: sticky;
+    bottom: 0;
+    z-index: 90;
+    background: var(--bg);
+    padding: var(--gap) 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+}
+nav .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--gap);
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--gap);
+}
+nav .menu li a {
+    display: block;
+    background: rgba(255,255,255,0.05);
+    color: var(--fg);
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+}
+nav .menu li a .icon {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+nav .menu li a:hover,
+nav .menu li a:focus {
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Back button (for sub-pages) */
+.back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--gap) auto 0;
+    max-width: 800px;
+    text-decoration: none;
+    background: rgba(255,255,255,0.05);
+    color: var(--fg);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
+}
+.back-btn:hover,
+.back-btn:focus {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+.back-btn .arrow {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Categories & items (all pages) */
+.category {
+    margin-bottom: 2rem;
+}
+.category h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.25rem;
+    margin-bottom: var(--gap);
+}
+.item-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--gap);
+}
+.item {
+    background: rgba(255,255,255,0.05);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+}
+.item:hover {
+    background: rgba(255,255,255,0.1);
+}
+.item-name {
+    font-weight: 500;
+}
+.price {
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--gap);
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
