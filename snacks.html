@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Snacks – Bar Menu</title>
+  <title data-i18n-key="snacksPageTitle">Snacks – Bar Menu</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -12,43 +12,52 @@
 </head>
 <body>
 <header>
-  <h1>🍟 Snacks</h1>
-  <!-- Theme toggle -->
-  <button id="themeToggle" aria-label="Toggle theme">🌞</button>
+  <!-- Language toggle (left) -->
+  <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
+  <!-- Centered title -->
+  <h1 data-i18n-key="snacks">🍟 Snacks</h1>
+  <!-- Theme toggle (right) -->
+  <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
 
 <!-- Back button -->
 <a href="index.html" class="back-btn">
-  <span class="arrow">←</span> Back to Menu
+  <span class="arrow">←</span>
+  <span data-i18n-key="backToMenu">Back to Menu</span>
 </a>
 
 <main>
-  <p class="intro">Browse our snacks below—or search for your favorite.</p>
+  <!-- Intro text -->
+  <p class="intro" data-i18n-key="snacksIntro">
+    Browse our snacks below—or search for your favorite.
+  </p>
 
-  <!-- Live search for this page -->
+  <!-- Live search -->
   <input
           type="search"
           id="menuSearch"
+          data-i18n-key="searchSnacks"
           placeholder="🔍 Search snacks…"
   />
 
+  <!-- Snacks category -->
   <section class="category">
-    <h2>Snacks</h2>
+    <h2 data-i18n-key="snacksCategory">Snacks</h2>
     <div class="item-list">
       <div class="item">
-        <span class="item-name">Nachos</span>
+        <span class="item-name" data-i18n-key="itemNachos">Nachos</span>
         <span class="price">$5.00</span>
       </div>
       <div class="item">
-        <span class="item-name">Chicken Wings</span>
+        <span class="item-name" data-i18n-key="itemChickenWings">Chicken Wings</span>
         <span class="price">$6.50</span>
       </div>
       <div class="item">
-        <span class="item-name">Fries</span>
+        <span class="item-name" data-i18n-key="itemFries">Fries</span>
         <span class="price">$4.00</span>
       </div>
       <div class="item">
-        <span class="item-name">Sliders</span>
+        <span class="item-name" data-i18n-key="itemSliders">Sliders</span>
         <span class="price">$7.00</span>
       </div>
     </div>
@@ -56,24 +65,14 @@
 </main>
 
 <footer>
-  &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
+    <span data-i18n-key="footerText">
+      &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
+    </span>
 </footer>
 
-<script>
-  // Dark / Light toggle
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    document.documentElement.classList.toggle('light');
-    themeToggle.textContent = document.documentElement.classList.contains('light') ? '🌙' : '🌞';
-  });
-
-  // Live search / filter on this page
-  document.getElementById('menuSearch').addEventListener('input', e => {
-    const term = e.target.value.toLowerCase();
-    document.querySelectorAll('.item-list .item').forEach(item => {
-      item.style.display = item.textContent.toLowerCase().includes(term) ? 'flex' : 'none';
-    });
-  });
-</script>
+<!-- Fuse.js for fuzzy search -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+<!-- Shared behavior: theme toggle, language, search -->
+<script src="main.js"></script>
 </body>
 </html>

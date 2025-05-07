@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Coffee – Bar Menu</title>
+    <title data-i18n-key="coffeePageTitle">Coffee – Bar Menu</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -12,67 +12,79 @@
 </head>
 <body>
 <header>
-    <h1>☕ Coffee</h1>
-    <!-- Theme toggle -->
-    <button id="themeToggle" aria-label="Toggle theme">🌞</button>
+    <!-- Language toggle (left) -->
+    <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
+    <h1 data-i18n-key=""> ☕ </h1>
+    <!-- Centered title -->
+    <h1 data-i18n-key="coffee">Coffee</h1>
+    <!-- Theme toggle (right) -->
+    <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
 
 <!-- Back button -->
 <a href="index.html" class="back-btn">
-    <span class="arrow">←</span> Back to Menu
+    <span class="arrow">←</span>
+    <span data-i18n-key="backToMenu">Back to Menu</span>
 </a>
 
 <main>
-    <p class="intro">Browse our coffee below—or search for your favorite.</p>
+    <!-- Intro text -->
+    <p class="intro" data-i18n-key="coffeeIntro">
+        Browse our coffee below—or search for your favorite.
+    </p>
 
-    <!-- Live search for this page -->
+    <!-- Live search -->
     <input
             type="search"
             id="menuSearch"
+            data-i18n-key="searchCoffee"
             placeholder="🔍 Search coffee…"
     />
 
+    <!-- Espresso category -->
     <section class="category">
-        <h2>Espresso</h2>
+        <h2 data-i18n-key="espresso">Espresso</h2>
         <div class="item-list">
             <div class="item">
-                <span class="item-name">Single Espresso</span>
+                <span class="item-name" data-i18n-key="itemSingleEspresso">Single Espresso</span>
                 <span class="price">$3.00</span>
             </div>
             <div class="item">
-                <span class="item-name">Double Espresso</span>
+                <span class="item-name" data-i18n-key="itemDoubleEspresso">Double Espresso</span>
                 <span class="price">$4.00</span>
             </div>
         </div>
     </section>
 
+    <!-- Milk-Based category -->
     <section class="category">
-        <h2>Milk-Based</h2>
+        <h2 data-i18n-key="milkBased">Milk-Based</h2>
         <div class="item-list">
             <div class="item">
-                <span class="item-name">Cappuccino</span>
+                <span class="item-name" data-i18n-key="itemCappuccino">Cappuccino</span>
                 <span class="price">$4.50</span>
             </div>
             <div class="item">
-                <span class="item-name">Latte</span>
+                <span class="item-name" data-i18n-key="itemLatte">Latte</span>
                 <span class="price">$5.00</span>
             </div>
             <div class="item">
-                <span class="item-name">Flat White</span>
+                <span class="item-name" data-i18n-key="itemFlatWhite">Flat White</span>
                 <span class="price">$5.00</span>
             </div>
         </div>
     </section>
 
+    <!-- Cold Coffee category -->
     <section class="category">
-        <h2>Cold Coffee</h2>
+        <h2 data-i18n-key="coldCoffee">Cold Coffee</h2>
         <div class="item-list">
             <div class="item">
-                <span class="item-name">Iced Latte</span>
+                <span class="item-name" data-i18n-key="itemIcedLatte">Iced Latte</span>
                 <span class="price">$5.50</span>
             </div>
             <div class="item">
-                <span class="item-name">Cold Brew</span>
+                <span class="item-name" data-i18n-key="itemColdBrew">Cold Brew</span>
                 <span class="price">$6.00</span>
             </div>
         </div>
@@ -80,24 +92,14 @@
 </main>
 
 <footer>
-    &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
+    <span data-i18n-key="footerText">
+      &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
+    </span>
 </footer>
 
-<script>
-    // Dark / Light toggle
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-        document.documentElement.classList.toggle('light');
-        themeToggle.textContent = document.documentElement.classList.contains('light') ? '🌙' : '🌞';
-    });
-
-    // Live search / filter on this page
-    document.getElementById('menuSearch').addEventListener('input', e => {
-        const term = e.target.value.toLowerCase();
-        document.querySelectorAll('.item-list .item').forEach(item => {
-            item.style.display = item.textContent.toLowerCase().includes(term) ? 'flex' : 'none';
-        });
-    });
-</script>
+<!-- Fuse.js for fuzzy search -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+<!-- Shared behavior: theme toggle, language, search -->
+<script src="main.js"></script>
 </body>
 </html>

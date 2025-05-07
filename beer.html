@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Beer – Bar Menu</title>
+  <title data-i18n-key="beerPageTitle">Beer – Bar Menu</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -12,28 +12,38 @@
 </head>
 <body>
 <header>
-  <h1>🍺 Beer</h1>
+  <!-- Language toggle -->
+  <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
+  <h1 data-i18n-key=""> 🍺 </h1>
+  <!-- Centered title -->
+  <h1 data-i18n-key="beer">Beer</h1>
   <!-- Theme toggle -->
-  <button id="themeToggle" aria-label="Toggle theme">🌞</button>
+  <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
 
 <!-- Back button -->
 <a href="index.html" class="back-btn">
-  <span class="arrow">←</span> Back to Menu
+  <span class="arrow">←</span>
+  <span data-i18n-key="backToMenu">Back to Menu</span>
 </a>
 
 <main>
-  <p class="intro">Browse our beers below—or search for your favorite.</p>
+  <!-- Intro text -->
+  <p class="intro" data-i18n-key="beerIntro">
+    Browse our beers below—or search for your favorite.
+  </p>
 
-  <!-- Live search for this page -->
+  <!-- Search input -->
   <input
           type="search"
           id="menuSearch"
+          data-i18n-key="searchBeer"
           placeholder="🔍 Search beers…"
   />
 
+  <!-- Beer category -->
   <section class="category">
-    <h2>Our Beers</h2>
+    <h2 data-i18n-key="ourBeers">Our Beers</h2>
     <div class="item-list">
       <div class="item">
         <span class="item-name">Heineken</span>
@@ -56,26 +66,14 @@
 </main>
 
 <footer>
-  &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
+    <span data-i18n-key="footerText">
+      &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
+    </span>
 </footer>
 
-<script>
-  // Dark / Light toggle
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    document.documentElement.classList.toggle('light');
-    themeToggle.textContent = document.documentElement.classList.contains('light') ? '🌙' : '🌞';
-  });
-
-  // Live search / filter on this page
-  document.getElementById('menuSearch').addEventListener('input', e => {
-    const term = e.target.value.toLowerCase();
-    document.querySelectorAll('.item-list .item').forEach(item => {
-      item.style.display = item.textContent.toLowerCase().includes(term)
-              ? 'flex'
-              : 'none';
-    });
-  });
-</script>
+<!-- Fuse.js (for fuzzy search) -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+<!-- Your shared JS (theme toggle, i18n, search) -->
+<script src="main.js"></script>
 </body>
 </html>

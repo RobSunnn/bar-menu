@@ -12,44 +12,74 @@
 </head>
 <body>
 <header>
-  <h1>🍹 Bar Menu</h1>
-  <button id="themeToggle" aria-label="Toggle theme">🌞</button>
+  <!-- Language toggle on left -->
+  <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
+
+  <!-- Centered title -->
+  <h1 data-i18n-key="menuTitle">🍹 Bar Menu</h1>
+
+  <!-- Theme toggle on right -->
+  <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
 
 <main>
-  <p class="intro">Scan the QR on your table, then tap a category below to explore our offerings.</p>
-  <input type="search" id="menuSearch" placeholder="🔍 Search menu…" />
+  <p class="intro" data-i18n-key="intro">
+    Scan the QR on your table, then tap a category below to explore our offerings.
+  </p>
+
+  <!-- search input with i18n key -->
+  <input
+          type="search"
+          id="menuSearch"
+          data-i18n-key="searchPlaceholder"
+          placeholder="🔍 Search menu…"
+  />
 
   <nav>
     <ul class="menu">
-      <li><a href="alcohol.html"><span class="icon">🍸</span>Alcohol</a></li>
-      <li><a href="beer.html"><span class="icon">🍺</span>Beer</a></li>
-      <li><a href="beverages.html"><span class="icon">🥤</span>Beverages</a></li>
-      <li><a href="coffee.html"><span class="icon">☕</span>Coffee</a></li>
-      <li><a href="snacks.html"><span class="icon">🍟</span>Snacks</a></li>
+      <li>
+        <a href="alcohol.html">
+          <span class="icon">🍸</span>
+          <span data-i18n-key="alcohol">Alcohol</span>
+        </a>
+      </li>
+      <li>
+        <a href="beer.html">
+          <span class="icon">🍺</span>
+          <span data-i18n-key="beer">Beer</span>
+        </a>
+      </li>
+      <li>
+        <a href="beverages.html">
+          <span class="icon">🥤</span>
+          <span data-i18n-key="beverages">Beverages</span>
+        </a>
+      </li>
+      <li>
+        <a href="coffee.html">
+          <span class="icon">☕</span>
+          <span data-i18n-key="coffee">Coffee</span>
+        </a>
+      </li>
+      <li>
+        <a href="snacks.html">
+          <span class="icon">🍟</span>
+          <span data-i18n-key="snacks">Snacks</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </main>
 
 <footer>
-  &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
+    <span data-i18n-key="footerText">
+      &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
+    </span>
 </footer>
 
-<script>
-  // Dark / Light toggle
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    document.documentElement.classList.toggle('light');
-    themeToggle.textContent = document.documentElement.classList.contains('light') ? '🌙' : '🌞';
-  });
-
-  // Live search / filter
-  document.getElementById('menuSearch').addEventListener('input', e => {
-    const term = e.target.value.toLowerCase();
-    document.querySelectorAll('.menu li').forEach(li => {
-      li.style.display = li.textContent.toLowerCase().includes(term) ? 'block' : 'none';
-    });
-  });
-</script>
+<!-- 1) Load Fuse.js for fuzzy search -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+<!-- 2) Load your shared main.js -->
+<script src="main.js"></script>
 </body>
 </html>

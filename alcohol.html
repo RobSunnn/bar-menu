@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alcohol – Bar Menu</title>
+  <title data-i18n-key="alcoholPageTitle">Alcohol – Bar Menu</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -12,30 +12,39 @@
 </head>
 <body>
 <header>
-  <h1>🍸 Alcohol</h1>
-  <!-- Theme toggle -->
-  <button id="themeToggle" aria-label="Toggle theme">🌞</button>
+  <!-- Language toggle left -->
+  <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
+
+  <h1 data-i18n-key=""> 🍸 </h1>
+  <!-- Centered page title -->
+  <h1 data-i18n-key="alcohol"></h1>
+  <!-- Theme toggle right -->
+  <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
 
 <!-- Back button -->
 <a href="index.html" class="back-btn">
-  <span class="arrow">←</span> Back to Menu
+  <span class="arrow">←</span>
+  <span data-i18n-key="backToMenu">Back to Menu</span>
 </a>
 
 <main>
-  <!-- Optional intro -->
-  <p class="intro">Browse our spirits below—or search for your favorite.</p>
+  <!-- Intro text -->
+  <p class="intro" data-i18n-key="alcoholIntro">
+    Browse our spirits below—or search for your favorite.
+  </p>
 
-  <!-- Live search for this page -->
+  <!-- Live search -->
   <input
           type="search"
           id="menuSearch"
+          data-i18n-key="searchAlcohol"
           placeholder="🔍 Search alcohol…"
   />
 
-  <!-- Your categories/items -->
+  <!-- Categories -->
   <section class="category">
-    <h2>Whiskey</h2>
+    <h2 data-i18n-key="whiskey">Whiskey</h2>
     <div class="item-list">
       <div class="item"><span class="item-name">Jameson Irish Whiskey</span><span class="price">$8.00</span></div>
       <div class="item"><span class="item-name">Jack Daniel's</span><span class="price">$9.00</span></div>
@@ -48,7 +57,7 @@
   </section>
 
   <section class="category">
-    <h2>Vodka</h2>
+    <h2 data-i18n-key="vodka">Vodka</h2>
     <div class="item-list">
       <div class="item"><span class="item-name">Absolut Vodka</span><span class="price">$6.00</span></div>
       <div class="item"><span class="item-name">Grey Goose</span><span class="price">$8.50</span></div>
@@ -57,7 +66,7 @@
   </section>
 
   <section class="category">
-    <h2>Other Drinks</h2>
+    <h2 data-i18n-key="otherDrinks">Other Drinks</h2>
     <div class="item-list">
       <div class="item"><span class="item-name">Bacardi Rum</span><span class="price">$7.00</span></div>
       <div class="item"><span class="item-name">Campari</span><span class="price">$7.50</span></div>
@@ -67,26 +76,14 @@
 </main>
 
 <footer>
-  &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
+    <span data-i18n-key="footerText">
+      &copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!
+    </span>
 </footer>
 
-<script>
-  // 1. Dark / Light toggle (shared with index)
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    document.documentElement.classList.toggle('light');
-    themeToggle.textContent = document.documentElement.classList.contains('light') ? '🌙' : '🌞';
-  });
-
-  // 2. Live search / filter on this page
-  document.getElementById('menuSearch').addEventListener('input', e => {
-    const term = e.target.value.toLowerCase();
-    document.querySelectorAll('.item-list .item').forEach(item => {
-      item.style.display = item.textContent.toLowerCase().includes(term)
-              ? 'flex'
-              : 'none';
-    });
-  });
-</script>
+<!-- Fuse.js for fuzzy search -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+<!-- Your shared JS -->
+<script src="main.js"></script>
 </body>
 </html>

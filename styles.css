@@ -49,6 +49,25 @@ header h1 {
     font-size: 1.75rem;
     font-weight: 600;
 }
+
+/*span {*/
+/*    font-size: 1.2rem;*/
+/*}*/
+
+/*!* Make the grid items square and center their contents *!*/
+/*nav .menu li  {*/
+/*    display: flex;               !* switch from block to flex *!*/
+/*    flex-direction: column;      !* stack icon over text *!*/
+/*    justify-content: center;     !* vertical centering *!*/
+/*    align-items: center;         !* horizontal centering *!*/
+/*    aspect-ratio: 1 / 1;         !* force a 1:1 width/height *!*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*nav .menu li a {*/
+/*    min-width: 140px;*/
+/*}*/
+
 /* Theme toggle button */
 #themeToggle {
     position: absolute;
@@ -117,7 +136,7 @@ nav .menu li a {
 }
 nav .menu li a .icon {
     display: block;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 0.25rem;
 }
 nav .menu li a:hover,
@@ -193,4 +212,40 @@ footer {
     padding: var(--gap);
     font-size: 0.85rem;
     opacity: 0.6;
+}
+
+/* Header becomes a flex container, title centered */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* for absolutely positioned buttons */
+}
+
+/* Shared toggle styling */
+.toggle-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    color: var(--fg);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+.toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Language toggle on the far left */
+#langToggle {
+    position: absolute;
+    left: var(--gap);
+}
+
+/* Theme toggle on the far right */
+#themeToggle {
+    position: absolute;
+    right: var(--gap);
 }
