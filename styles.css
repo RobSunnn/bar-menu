@@ -10,12 +10,12 @@
     --gap: 1rem;
 }
 
-/* Light mode override */
+/* Light mode overrides */
 :root.light {
     --bg: #f9f9f9;
     --fg: #1c1c1c;
-    --accent: #e91e63;
-    --accent-dark: #b0003a;
+    --accent: #2196f3;       /* new blue accent */
+    --accent-dark: #1769aa;
 }
 
 /* Reset + globals */
