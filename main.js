@@ -78,15 +78,31 @@ const translations = {
     }
 };
 
-// ——— 1) Theme toggle ———
+// ——— Theme toggle (with persistence) ———
+
+// 1) On load: restore saved theme (default to dark)
+const savedTheme = localStorage.getItem('theme') || 'dark';
+if (savedTheme === 'light') {
+    document.documentElement.classList.add('light');
+} else {
+    document.documentElement.classList.remove('light');
+}
+
+// 2) Wire up the toggle button
 const themeToggle = document.getElementById('themeToggle');
 if (themeToggle) {
+    // Set the initial icon
+    themeToggle.textContent = document.documentElement.classList.contains('light') ? '🌙' : '🌞';
+
+    // On click: flip theme, update icon, and save
     themeToggle.addEventListener('click', () => {
-        document.documentElement.classList.toggle('light');
-        themeToggle.textContent =
-            document.documentElement.classList.contains('light') ? '🌙' : '🌞';
+        const isLight = document.documentElement.classList.toggle('light');
+        themeToggle.textContent = isLight ? '🌙' : '🌞';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
 }
+
+
 
 // ——— 2) Debounce helper ———
 function debounce(fn, delay = 200) {
@@ -260,3 +276,22 @@ if (langToggle) {
         applyLanguage(next);
     });
 }
+
+// ——— Splash screen remover ———
+window.addEventListener('load', () => {
+    // wait 1.5 seconds, then fade out & remove the splash
+    setTimeout(() => {
+        const splash = document.getElementById('splash-screen');
+        if (!splash) return;
+        splash.classList.add('fade-out');
+        splash.addEventListener('transitionend', () => splash.remove());
+    }, 700);
+});
+
+window.addEventListener('unload', () => {
+    // WARNING: this will wipe *all* localStorage for your site,
+    // even in other tabs. Use with care.
+    localStorage.clear();
+});
+
+
