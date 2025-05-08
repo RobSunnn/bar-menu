@@ -42,6 +42,10 @@ const translations = {
         gin:                   'Dry Gin 50ml',
         baileys:               'Baileys 50ml',
         appleLiqueur:          'Jack Daniels Apple Liqueur 50ml',
+        kamenitza:             'Kamenitza',
+        burgasko:              'Burgasko',
+        naturalJuices:         'Natural Juices',
+        energyDrinks:          'Energy Drinks',
         footerText:            '© 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!'
     },
     bg: {
@@ -84,6 +88,10 @@ const translations = {
         gin:                   'Джин 50мл',
         baileys:               'Бейлис 50мл',
         appleLiqueur:          'Ябълков ликьор 50мл',
+        kamenitza: 'Каменица',
+        burgasko: 'Бургаско',
+        naturalJuices: 'Натурални сокове',
+        energyDrinks: 'Енергийни напитки',
         footerText:            '© 2025 OK SPORT Bar Digital Menu. Наслаждавайте се отговорно!'
     }
 };
