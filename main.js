@@ -46,6 +46,7 @@ const translations = {
         burgasko:              'Burgasko',
         naturalJuices:         'Natural Juices',
         energyDrinks:          'Energy Drinks',
+        coffeeAndTea:          'Coffee And Tea',
         footerText:            '© 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!'
     },
     bg: {
@@ -88,10 +89,11 @@ const translations = {
         gin:                   'Джин 50мл',
         baileys:               'Бейлис 50мл',
         appleLiqueur:          'Ябълков ликьор 50мл',
-        kamenitza: 'Каменица',
-        burgasko: 'Бургаско',
-        naturalJuices: 'Натурални сокове',
-        energyDrinks: 'Енергийни напитки',
+        kamenitza:             'Каменица',
+        burgasko:              'Бургаско',
+        naturalJuices:         'Натурални сокове',
+        energyDrinks:          'Енергийни напитки',
+        coffeeAndTea:          'Кафе и Чай',
         footerText:            '© 2025 OK SPORT Bar Digital Menu. Наслаждавайте се отговорно!'
     }
 };
