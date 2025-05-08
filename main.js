@@ -36,6 +36,12 @@ const translations = {
         searchSnacks:          '🔍 Search snacks…',
         snacksCategory:        'Snacks',
         backToMenu:            'Back to Menu',
+        wine:                  'Wine - Starosel',
+        wineWhite:             'White Wine 150ml',
+        wineRed:               'Red Wine 150ml',
+        gin:                   'Dry Gin 50ml',
+        baileys:               'Baileys 50ml',
+        appleLiqueur:          'Jack Daniels Apple Liqueur 50ml',
         footerText:            '© 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!'
     },
     bg: {
@@ -72,6 +78,12 @@ const translations = {
         searchSnacks:          '🔍 Търси снаксове…',
         snacksCategory:        'Снаксове',
         backToMenu:            'Към менюто',
+        wine:                  'Вино - Старосел',
+        wineWhite:             'Бяло Вино 150 мл',
+        wineRed:               'Червено Вино 150 мл',
+        gin:                   'Джин 50мл',
+        baileys:               'Бейлис 50мл',
+        appleLiqueur:          'Ябълков ликьор 50мл',
         footerText:            '© 2025 OK SPORT Bar Digital Menu. Наслаждавайте се отговорно!'
     }
 };

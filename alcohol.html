@@ -17,23 +17,23 @@
 
 <header>
   <button id="langToggle" class="toggle-btn" aria-label="Toggle language">EN</button>
-  <h1>🍸 Alcohol</h1>
+  <h1 data-i18n-key="alcohol">🍸 Alcohol</h1>
   <button id="themeToggle" class="toggle-btn" aria-label="Toggle theme">🌞</button>
 </header>
 
 <a href="index.html" class="back-btn">
   <span class="arrow">←</span>
-  <span>Back to Menu</span>
+  <span data-i18n-key="backToMenu">Back to Menu</span>
 </a>
 
 <main>
-  <p class="intro">Browse our spirits below—or search for your favorite.</p>
+  <p class="intro" data-i18n-key="alcoholIntro">Browse our spirits below—or search for your favorite.</p>
 
-  <input type="search" id="menuSearch" placeholder="🔍 Search alcohol…"/>
+  <input type="search" id="menuSearch" data-i18n-key="searchAlcohol" placeholder="🔍 Search alcohol…"/>
 
   <!-- Whiskey category -->
   <section class="category">
-    <h2>Whiskey</h2>
+    <h2 data-i18n-key="whiskey">Whiskey</h2>
     <div class="item-list">
       <div class="item" data-name="Loch Lomond 50ml" data-img="" data-desc="Smooth Scotch whiskey." data-price="BGN 6">
         <span class="item-name">Loch Lomond 50ml</span>
@@ -55,16 +55,12 @@
         <span class="item-name">Black Johnnie</span>
         <span class="price">BGN 9</span>
       </div>
-      <div class="item" data-name="Jack Daniels Apple Liquer 50ml" data-img="" data-desc="Smooth apple-flavored whiskey." data-price="BGN 6">
-        <span class="item-name">Jack Daniels Apple Liquer 50ml</span>
-        <span class="price">BGN 6</span>
-      </div>
     </div>
   </section>
 
   <!-- Vodka category -->
   <section class="category">
-    <h2>Vodka</h2>
+    <h2 data-i18n-key="vodka">Vodka</h2>
     <div class="item-list">
       <div class="item" data-name="Finlandia 50ml" data-img="" data-desc="Pure Finnish vodka." data-price="BGN 5">
         <span class="item-name">Finlandia 50ml</span>
@@ -83,14 +79,14 @@
 
   <!-- Wine category -->
   <section class="category">
-    <h2>Wine - Starosel</h2>
+    <h2 data-i18n-key="wine">Wine - Starosel</h2>
     <div class="item-list">
       <div class="item" data-name="Starosel White 150ml" data-img="" data-desc="Crisp white wine from Starosel." data-price="BGN 5.50">
-        <span class="item-name">White Wine 150ml</span>
+        <span data-i18n-key="wineWhite" class="item-name">White Wine 150ml</span>
         <span class="price">BGN 5.50</span>
       </div>
       <div class="item" data-name="Starosel Red 150ml" data-img="" data-desc="Rich red wine from Starosel." data-price="BGN 5.50">
-        <span class="item-name">Red Wine 150ml</span>
+        <span data-i18n-key="wineRed" class="item-name">Red Wine 150ml</span>
         <span class="price">BGN 5.50</span>
       </div>
     </div>
@@ -98,22 +94,26 @@
 
   <!-- Other Alcoholic Drinks -->
   <section class="category">
-    <h2>Other Alcoholic Drinks</h2>
+    <h2 data-i18n-key="otherDrinks">Other Alcoholic Drinks</h2>
     <div class="item-list">
       <div class="item" data-name="Dry Gin 50ml" data-img="" data-desc="Classic dry gin." data-price="BGN 2.50">
-        <span class="item-name">Dry Gin 50ml</span>
+        <span data-i18n-key="gin" class="item-name">Dry Gin 50ml</span>
         <span class="price">BGN 2.50</span>
       </div>
       <div class="item" data-name="Baileys 50ml" data-img="" data-desc="Creamy Irish liqueur." data-price="BGN 4.50">
-        <span class="item-name">Baileys 50ml</span>
+        <span data-i18n-key="baileys" class="item-name">Baileys 50ml</span>
         <span class="price">BGN 4.50</span>
+      </div>
+      <div class="item" data-name="Jack Daniels Apple Liquer 50ml" data-img="" data-desc="Smooth apple-flavored whiskey." data-price="BGN 6">
+        <span data-i18n-key="appleLiqueur" class="item-name">Jack Daniels Apple Liqueur 50ml</span>
+        <span class="price">BGN 6</span>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <span>&copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!</span>
+  <span data-i18n-key="footerText">&copy; 2025 OK SPORT Bar Digital Menu. Enjoy responsibly!</span>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
